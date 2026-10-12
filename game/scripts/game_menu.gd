@@ -3,6 +3,7 @@ extends CanvasLayer
 
 const ArtTheme = preload("res://scripts/art_theme.gd")
 const MenuEffects = preload("res://scripts/menu_effects.gd")
+const REPO_URL := "https://github.com/etosheartem/lovec-dush"
 
 var game
 var screen: Control
@@ -219,6 +220,21 @@ func show_page(next_page: String) -> void:
 			_button(game.G.strings[2], func(): show_page("help"))
 			_button(game.G.strings[4], func(): show_page("credits"))
 			_button(game.G.strings[5], game.quit_game)
+			var repo := LinkButton.new()
+			repo.text = "GitHub · etosheartem/lovec-dush"
+			repo.uri = REPO_URL
+			repo.underline = LinkButton.UNDERLINE_MODE_ALWAYS
+			repo.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+			repo.pressed.connect(func(): game.sound.effect("click"))
+			repo.focus_mode = Control.FOCUS_NONE
+			repo.add_theme_font_size_override("font_size", 24)
+			repo.add_theme_color_override("font_color", ArtTheme.MUTED)
+			repo.add_theme_color_override("font_hover_color", ArtTheme.BRASS)
+			repo.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)
+			repo.grow_vertical = Control.GROW_DIRECTION_BEGIN
+			repo.offset_left = 28
+			repo.offset_bottom = -22
+			screen.add_child(repo)
 		"pause":
 			_base("Пауза")
 			_text("Собрано душ: %d из 3" % game.souls.size()).horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER

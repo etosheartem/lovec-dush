@@ -43,7 +43,7 @@
 
 ### Было и стало
 
-<img src="docs/compare-street.jpg" alt="Улица: оригинал и ремейк">
+<img src="docs/compare-kitchen.jpg" alt="Кухня монастыря: оригинал и ремейк">
 
 <img src="docs/compare-monastery.jpg" alt="Монастырь: оригинал и ремейк">
 

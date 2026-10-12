@@ -11,6 +11,10 @@
 ![Версия](https://img.shields.io/badge/версия-0.12-ffcd71)
 ![Сюжет](https://img.shields.io/badge/сюжет-1%3A1%20с%20оригиналом-8a5a2b)
 
+### [⬇ Скачать APK для Android](https://github.com/etosheartem/lovec-dush/releases/latest/download/lovec_dush.apk)
+
+<sub>Android 64-бит (arm64) · ~375 МБ · <a href="https://github.com/etosheartem/lovec-dush/releases">все версии</a></sub>
+
 <img src="docs/menu.jpg" alt="Главное меню" width="860">
 
 </div>

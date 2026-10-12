@@ -1,0 +1,1370 @@
+{
+  "4b3375e4e55acfd364377a0203a2e8382ccc1a7233e08ceb96074dece1d61be6": {
+    "file": "4b3375e4e55acfd364377a0203a2e8382ccc1a7233e08ceb96074dece1d61be6_357c9383089b.mp3",
+    "speaker": "Черт",
+    "text": "Привет, душа. Проснись и пой! Пришел я, избавитель твой!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "eb3537a974a79b80aed0c92878310dbd492fa08adc7b24a0ce1cc040dd9b1a49": {
+    "file": "eb3537a974a79b80aed0c92878310dbd492fa08adc7b24a0ce1cc040dd9b1a49_c935b498c159.mp3",
+    "speaker": "Черт",
+    "text": "Всего лишь ангел загорелый - я крылья снял в лесу - не дело по подземельям мять добро, что от рождения дано.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "c87d04f3834a9586fb32e18cabc49f144765e77840ef4ed21010178575d8f9d4": {
+    "file": "c87d04f3834a9586fb32e18cabc49f144765e77840ef4ed21010178575d8f9d4_c53a7e9c9410.mp3",
+    "speaker": "Настоятель",
+    "text": "Изыди, карапуз! Мал ты со мной тягаться! Таких как ты клопов давил я средним пальцем!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "daniel",
+    "direction": "[sternly]"
+  },
+  "f249e38ca9007883f1f322b9c56eb5674918ab9b11a10ff78c93f5edb901b1ec": {
+    "file": "f249e38ca9007883f1f322b9c56eb5674918ab9b11a10ff78c93f5edb901b1ec_aa102dfa0e8e.mp3",
+    "speaker": "Настоятель",
+    "text": "О, левая пятка святого Луки! Мне дурно вдруг стало! Спаси, сохрани!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "daniel",
+    "direction": "[sternly]"
+  },
+  "d180a79b416a6643dbda18a547455f488e4b1f7c6a29a38474312b9db17676c1": {
+    "file": "d180a79b416a6643dbda18a547455f488e4b1f7c6a29a38474312b9db17676c1_777b7d3dc8db.mp3",
+    "speaker": "Алхимик",
+    "text": "Ага! Держи теперь вот здесь! Да сыпь.. но только не так много! Ты достучаться до небес решил? Твоя же в ад дорога!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "4e21e94e366179ef74d6db2a74ffc0f43d2a4417b64ce6f49027190f34e57587": {
+    "file": "4e21e94e366179ef74d6db2a74ffc0f43d2a4417b64ce6f49027190f34e57587_c2f7dbf7f79e.mp3",
+    "speaker": "Алхимик",
+    "text": "Ага. Вот тут есть то, что сможет помочь! Сгодится тут робот - его только мощь не служит ни раю, ни аду! Вот то, что тебе будет надо!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "d8f08a1631ce38e2e8c0810eca7a358272b67d3d0f3bb2e829879ef20e86b27a": {
+    "file": "d8f08a1631ce38e2e8c0810eca7a358272b67d3d0f3bb2e829879ef20e86b27a_2af398207eed.mp3",
+    "speaker": "Алхимик",
+    "text": "Вот черти то изнежены пошли - как благородные девицы уж поди. Да ты не бойся так - я пошутил. Сей амулет тебе укажет место, где спрятан древний манускрипт. У настоятеля он где-то там лежит. Для поисков дальнейших нужен нам.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "c50003c99e72fbf6b6b193cced9afa057ca9c2aaa7e99f84246e43788dd969f3": {
+    "file": "c50003c99e72fbf6b6b193cced9afa057ca9c2aaa7e99f84246e43788dd969f3_6e5fb4fe8082.mp3",
+    "speaker": "Алхимик",
+    "text": "В срединные века, однажды, между добром и злом нарушен был баланс. Трех душ не досчитался ад. Чтоб сей баланс восстановить был послан душ ловец, хитрющий черт, врун и проныра. Его судьбу вверяю вам...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "46a62ebf94c12f7a9ce3c3ede4aa2ae0e23b74e21d5be4679538fc88a0095179": {
+    "file": "46a62ebf94c12f7a9ce3c3ede4aa2ae0e23b74e21d5be4679538fc88a0095179_092ebb4aef9d.mp3",
+    "speaker": "Алхимик",
+    "text": "Да как же вы меня достали. Работать невозможно нихрена.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "42c6c57eb29fc848a0dc18292898ddc7f168acb281f7382fb63c8f736ab1a46d": {
+    "file": "42c6c57eb29fc848a0dc18292898ddc7f168acb281f7382fb63c8f736ab1a46d_148c95a2fad2.mp3",
+    "speaker": "Алхимик",
+    "text": "Да знаю я штуковину одну - смесь адскую огня и силы. Она взорвет и стену, тишину, коль будет в ней в достатке серы.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "2483d58d99599d0f9005aa88817b3711d8124abf64c8466f6d69373c3cabbe3b": {
+    "file": "2483d58d99599d0f9005aa88817b3711d8124abf64c8466f6d69373c3cabbe3b_c06d41341dfc.mp3",
+    "speaker": "Алхимик",
+    "text": "Мой старый друг, сидели с ним мы вместе. За экзорцизм заточен труп его. Скелет еще висит в том самом месте. А про другие души я не знаю ничего.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "2049ed5f0f4ec0f9b4f03410882d4015c00a5a200e72a491c4355b5e1b125cf0": {
+    "file": "2049ed5f0f4ec0f9b4f03410882d4015c00a5a200e72a491c4355b5e1b125cf0_031843e2ce1e.mp3",
+    "speaker": "Алхимик",
+    "text": "Ну как дела? Успехи как? Чего стоишь тут как дурак? Ты ноги в руки и вперед! Ты ведь не ангел, ты ведь черт!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "7e0c02bd31e3c106f3ff38cf6ec204c427bf44fa34682bf6083adc35ff7f5d10": {
+    "file": "7e0c02bd31e3c106f3ff38cf6ec204c427bf44fa34682bf6083adc35ff7f5d10_ecf9d2208082.mp3",
+    "speaker": "Алхимик",
+    "text": "Невежда ты, да и невежа тоже, ведь этот манускрипт всего дороже - про все тут можно прочитать и все, что хочешь разузнать.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "d1d1cc6541b10f45e24eeae2cf9b5fc87c98f0ac0963b35161fe0585cb754ff2": {
+    "file": "d1d1cc6541b10f45e24eeae2cf9b5fc87c98f0ac0963b35161fe0585cb754ff2_5ef2b757c07a.mp3",
+    "speaker": "Алхимик",
+    "text": "Ну что приперся, сера где? Как будто это нужно мне!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "6b24555557fcb066e2becd7af11deceb2479540ec884387fedcdafc45168ee70": {
+    "file": "6b24555557fcb066e2becd7af11deceb2479540ec884387fedcdafc45168ee70_d2da081d1c9b.mp3",
+    "speaker": "Алхимик",
+    "text": "Ну что принес? Давай читать, страницы древние листать.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "9f855f80dbdab29c903084d88a6d914a6ba8ca0767dc9e0d039ef2fbd749d9f4": {
+    "file": "9f855f80dbdab29c903084d88a6d914a6ba8ca0767dc9e0d039ef2fbd749d9f4_990be26fd1a3.mp3",
+    "speaker": "Алхимик",
+    "text": "На том истории и наступил конец. Баланс между добром и злом был восстановлен. Но музычка играла вновь не долго и вскоре черт был призван на ковер... но вот об этом с вами разговор продолжим позже... сейчас же пожелаю вам удачи! И не грешите или добрый друг, хитрец, врун и проныра придет за вами рано или поздно! Шучу, а может, говорю серьезно.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "c328acfdfe811218c404512359017d1d6d24e5b33242215eb193dc5e410acf0e": {
+    "file": "c328acfdfe811218c404512359017d1d6d24e5b33242215eb193dc5e410acf0e_16660b3f293c.mp3",
+    "speaker": "Алхимик",
+    "text": "Ну что ж, помог ты с маслом мне - спас от блуждания во тьме. Теперь за мною есть должок, его верну я точно в срок. А я в законе - можешь верить.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "7e3b9d750715a0d26566066943c335e73ae26090afaad9acea1883a896821b6b": {
+    "file": "7e3b9d750715a0d26566066943c335e73ae26090afaad9acea1883a896821b6b_59cc4c1398ca.mp3",
+    "speaker": "Алхимик",
+    "text": "Ну, как твои успехи, друг? Ужель с душой все удалось?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "5baeee09cb46c6a692e589f09c1994e778e1b49fa58bc5ff257b88038b70fde1": {
+    "file": "5baeee09cb46c6a692e589f09c1994e778e1b49fa58bc5ff257b88038b70fde1_0d3a225571a5.mp3",
+    "speaker": "Алхимик",
+    "text": "Свои проблемы шли ты в Лигу Наций, иль ввода войск у НАТО попроси. А у меня в лампаде нету масла, коль хочешь говорить - его мне принеси.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "5f5106c0ca72093b928b91ab5c3e5b2775538c3f32058f893990fc11b182c294": {
+    "file": "5f5106c0ca72093b928b91ab5c3e5b2775538c3f32058f893990fc11b182c294_51c74ae00f3d.mp3",
+    "speaker": "Дона Анна",
+    "text": "Да, это я.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "alice",
+    "direction": "[dramatically]"
+  },
+  "3ef6db9c72ed4d6dd0ff70d38723307cb1765d1742919761ff009b23f302363b": {
+    "file": "3ef6db9c72ed4d6dd0ff70d38723307cb1765d1742919761ff009b23f302363b_1ce697d8e44a.mp3",
+    "speaker": "Алхимик",
+    "text": "Хвала богам! Ну а чертям подавно! Так что же ты хвостатый хочешь знать?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "9c50558552af61f652a0d1de5696fd54374c1adf1cec786e689be1ac02721a95": {
+    "file": "9c50558552af61f652a0d1de5696fd54374c1adf1cec786e689be1ac02721a95_04af4e9a9a77.mp3",
+    "speaker": "Дона Анна",
+    "text": "Чо те надо?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "alice",
+    "direction": "[dramatically]"
+  },
+  "fd9a1f6240fcb6c235f552f3206618ebc8a0fca7dc8c751d885f1921956b4085": {
+    "file": "fd9a1f6240fcb6c235f552f3206618ebc8a0fca7dc8c751d885f1921956b4085_21f2dfab9ed8.mp3",
+    "speaker": "Дона Анна",
+    "text": "Папаша, ваша проповедь достала!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "alice",
+    "direction": "[dramatically]"
+  },
+  "943a8e49155c67dd5161cac12def04729d238c65546474c82e9414a4c2bbffb3": {
+    "file": "943a8e49155c67dd5161cac12def04729d238c65546474c82e9414a4c2bbffb3_b2fb1fcf434c.mp3",
+    "speaker": "Алхимик",
+    "text": "Так что это за амулет? О притяжение планет! Да он же проклят видишь вот тут символ, значащий \"урод\". Прыщи и бородавки вызывает - тебе по-моему и так уж их хватает. Сей амулет оставь ты у себя, не дам ему уродовать меня!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "f0ba6a4e1e1ffe4c71f2fa755557055560888ad4076408a85890453afaf2dd7c": {
+    "file": "f0ba6a4e1e1ffe4c71f2fa755557055560888ad4076408a85890453afaf2dd7c_7100262af3c1.mp3",
+    "speaker": "Звонарь",
+    "text": "Хрр.. хрр.. хрр..",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "brian",
+    "direction": "[sleepily]"
+  },
+  "328471cb2e1604ec9f7cd8ac189d60055fda6d74e1c98dc175976fa6886dbac0": {
+    "file": "328471cb2e1604ec9f7cd8ac189d60055fda6d74e1c98dc175976fa6886dbac0_9c67bcaa8dd0.mp3",
+    "speaker": "Звонарь",
+    "text": "Бом бом теледон! Что за штопаный... носок! Ужель обедню бить мне срок? Не время? Погружаюсь в сон.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "brian",
+    "direction": "[sleepily]"
+  },
+  "e02ba5eb89b0ffa01e31bcc302f39b5d4119bb9c7ae2a1b7f4c0ec3ca3c4381d": {
+    "file": "e02ba5eb89b0ffa01e31bcc302f39b5d4119bb9c7ae2a1b7f4c0ec3ca3c4381d_eefacbbb44b7.mp3",
+    "speaker": "Квазимодо",
+    "text": "Да, зрение тебя не обмануло - давно уж дам на этом месте нет.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "adam",
+    "direction": "[gruffly]"
+  },
+  "4480c63dc3f613df8c65abdf67de8850b389bf0c8707e2f9c78c2b88b124def9": {
+    "file": "4480c63dc3f613df8c65abdf67de8850b389bf0c8707e2f9c78c2b88b124def9_a5773f99886a.mp3",
+    "speaker": "Квазимодо",
+    "text": "Противный, ну зачем же драться - цветы и поцелуи слабость дам!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "adam",
+    "direction": "[gruffly]"
+  },
+  "d41773aaf30d6387f0d28b05d2d7fbf217848d1eadaad6c867592e36fe75fab2": {
+    "file": "d41773aaf30d6387f0d28b05d2d7fbf217848d1eadaad6c867592e36fe75fab2_f74077c41ede.mp3",
+    "speaker": "Квазимодо",
+    "text": "Ой! Кто это тут шляется рогатый? Шерстистый, да еще пузатый? Какой противный упырек! Не низок он и не высок!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "adam",
+    "direction": "[gruffly]"
+  },
+  "431f16bbd5cc16bdcb956ed6b5ed3ac3426cdda98fdb5b1b5fd718521a0f9e9e": {
+    "file": "431f16bbd5cc16bdcb956ed6b5ed3ac3426cdda98fdb5b1b5fd718521a0f9e9e_d230aacc5bb1.mp3",
+    "speaker": "Квазимодо",
+    "text": "Украл кто-то душу и радость мою! Верни мне ее - тебя я молю.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "adam",
+    "direction": "[gruffly]"
+  },
+  "9124c2864fb0e6bbd3961568b9981d6769c7777e857a3e470a092959c2e428ba": {
+    "file": "9124c2864fb0e6bbd3961568b9981d6769c7777e857a3e470a092959c2e428ba_9e79c0c53fd9.mp3",
+    "speaker": "Квазимодо",
+    "text": "Спасибо, милый добрый черт! Вернул мою ты радость! Теперь я пропущу тебя - вот будет благодарность.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "adam",
+    "direction": "[gruffly]"
+  },
+  "eb263c3c438bdf1dd7b7fa958351c7aebfc68b6544ee2eb44cd89208b7aa04ff": {
+    "file": "eb263c3c438bdf1dd7b7fa958351c7aebfc68b6544ee2eb44cd89208b7aa04ff_a31be23ed8fb.mp3",
+    "speaker": "Ключник",
+    "text": "Ага, бутылочка! Отлично! Пустая? Ай как неприлично! Сейчас наполним - подставляй, просил чего, то получай!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "351bec323307e06ab8510aee132a0158d2d76ba0e423ec34923c824093d3db64": {
+    "file": "351bec323307e06ab8510aee132a0158d2d76ba0e423ec34923c824093d3db64_f26bb80b4bd3.mp3",
+    "speaker": "Квазимодо",
+    "text": "Украли мою прелесссть, сокровище мое! Милосская Венера, дороже нету ничего. Коли вернешь ее мне, тебя в сад пропущу, а коли того хочешь, я много что могу.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "adam",
+    "direction": "[gruffly]"
+  },
+  "84ecdb36f28675744670f6c1f05424e99bcae5e4169e46e62dc5890503842e84": {
+    "file": "84ecdb36f28675744670f6c1f05424e99bcae5e4169e46e62dc5890503842e84_5b624d8bc60b.mp3",
+    "speaker": "Ключник",
+    "text": "А где мое вино? Забыл поди как делать? Тебе напомню я! Коль вспомню сам... ага! Ты виноград срезай, его под пресс скорей совай, рычаг нажал - оно уже готово и я доволен стану снова!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "86ed3ee15f12a1c3f1f469ea5a54c6f17cfbd21e73f7d9bcb3c72332e8b706df": {
+    "file": "86ed3ee15f12a1c3f1f469ea5a54c6f17cfbd21e73f7d9bcb3c72332e8b706df_af3400234727.mp3",
+    "speaker": "Ключник",
+    "text": "Ваше блгрдие...ик...гспжа удча... для кого ты... ик... добрая, а кому иначе... грешницу ик... падшую... подожди не жги... не взет нам в смерти... повзет в лбви!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "16e9558d390f8488d4bfb08f91c1441f29fc0108aef14839c507214c27812cca": {
+    "file": "16e9558d390f8488d4bfb08f91c1441f29fc0108aef14839c507214c27812cca_a4a6016107b5.mp3",
+    "speaker": "Ключник",
+    "text": "Да полно гневаться, чертила! Там алкоголя концентрат, поэтому горит не хуже, а даже лучше во сто крат!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "704968e86db81d2535626ef658b13d448a10ef3eb1d7875e62ba53b84409a164": {
+    "file": "704968e86db81d2535626ef658b13d448a10ef3eb1d7875e62ba53b84409a164_389eb6dbda4a.mp3",
+    "speaker": "Ключник",
+    "text": "Все в сад, скорее, черти, в сад! Растет там чудный виноград. Пить из него вино я рад. А души... позже обсуждать... мы может будем...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "f704a39f05e4b5bdf1ce9b5926344e832b86e2db837e7fc819986a73226be1d6": {
+    "file": "f704a39f05e4b5bdf1ce9b5926344e832b86e2db837e7fc819986a73226be1d6_ab3122977774.mp3",
+    "speaker": "Ключник",
+    "text": "Молитвою в урну на век заклейменный! От ока нечистого вечно сокрыт! Вставай же теперь ты мой друг принародно! Прощен ты и вечно в аду позабыт!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "434faa88e09584afde9df6a7146a9cf6cde8dc91e3b528679e4b5c280d5c610a": {
+    "file": "434faa88e09584afde9df6a7146a9cf6cde8dc91e3b528679e4b5c280d5c610a_8f93eeac4cc8.mp3",
+    "speaker": "Ключник",
+    "text": "О, черт, мой друг... Ты часто мне являлся в погребок, где жажду знания вином я утолял. Ох в те разы я пере...ик... берал...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "c4260a1cbba381edbee93fdde7665cd73e70f43ade998abe4050ed2edd7dc7ee": {
+    "file": "c4260a1cbba381edbee93fdde7665cd73e70f43ade998abe4050ed2edd7dc7ee_76a57f0c1891.mp3",
+    "speaker": "Ключник",
+    "text": "Спасибо, черт. Ик, выручил меня. А это что? Держи! О! Что-то плохо стало мне... Видать не истина в вине...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "4afc522be16f58db5f50643bdfa277748b121d818f1274ccc5673e15e0bf9d3e": {
+    "file": "4afc522be16f58db5f50643bdfa277748b121d818f1274ccc5673e15e0bf9d3e_b6d5f2bb8c45.mp3",
+    "speaker": "Ключник",
+    "text": "Тащи бутыль иль может плошку - я отолью чуть-чуть тебе.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "82d899bfe45c6359992ed1b74ac993832767ed72d2087006c1a3811d8da36391": {
+    "file": "82d899bfe45c6359992ed1b74ac993832767ed72d2087006c1a3811d8da36391_cd2ba494391a.mp3",
+    "speaker": "Ключник",
+    "text": "Уйди, нечистый! Дурно мне. Как голова болит, живот, и я сейчас уже вот-вот...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "d5333baa5d9cb2d19aa52eba4201a23cdf914e2c40d1638ac4fea6e9b8340bd9": {
+    "file": "d5333baa5d9cb2d19aa52eba4201a23cdf914e2c40d1638ac4fea6e9b8340bd9_70f5c7ffddb0.mp3",
+    "speaker": "Ключник",
+    "text": "Уж не милиция ли это? Они поднимут с того света, огрев дубинкою своей... Ан нет, тут существо добрей. Чертяка вновь явился мне. Ну, говори - чего тебе?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "3cd0546c99967383cdfc593c27abe24034be7591d4566d7bef0c1019ab871601": {
+    "file": "3cd0546c99967383cdfc593c27abe24034be7591d4566d7bef0c1019ab871601_d746bda576c4.mp3",
+    "speaker": "Ключник",
+    "text": "Что за душа еще! О боже. У настоятеля в горшке.. ну, то есть в урне... эээ... душа.... ну, грешная она там вся.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "1524a974a7c156c6566213a3fad6d914786452db600701ac16bee0d6aa9db007": {
+    "file": "1524a974a7c156c6566213a3fad6d914786452db600701ac16bee0d6aa9db007_e3736cdec5e7.mp3",
+    "speaker": "Курильщик",
+    "text": "А вот и папоротник славный! Душистый, яркий и забавный! Спасибо, выручил меня, за это пропущу тебя.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "liam",
+    "direction": "[dryly]"
+  },
+  "6d4e78a38eb7ec25d252fa77bf313fcdb14d1655d8bcd220b957c5cf3c3d2219": {
+    "file": "6d4e78a38eb7ec25d252fa77bf313fcdb14d1655d8bcd220b957c5cf3c3d2219_b8223a5d5764.mp3",
+    "speaker": "Ключник",
+    "text": "Чего ж еще... вина конечно! Наш погреб опустел с тех дней. Остался в нем один портвейн. А хочется вина грамм двести. Я помню хвастался ты раньше, что приготовить можешь сам, а виноград и пресс я дам. Да впрочем сам ты их возьми - вон слева пресс, а виноград в саду нарви.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "a29b5c5f415dfe7e3bc7b1b6dd05c8e5f68ffc5da2c3de28119c07b91de75c55": {
+    "file": "a29b5c5f415dfe7e3bc7b1b6dd05c8e5f68ffc5da2c3de28119c07b91de75c55_e49f28ae8688.mp3",
+    "speaker": "Курильщик",
+    "text": "А листья где?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "liam",
+    "direction": "[dryly]"
+  },
+  "f566b21b21c1ff056652861189ae595be2407ff39a3bc1316cc15b86d6d9e46e": {
+    "file": "f566b21b21c1ff056652861189ae595be2407ff39a3bc1316cc15b86d6d9e46e_bb9f82792565.mp3",
+    "speaker": "Курильщик",
+    "text": "А коль не там, тогда ты и беги туда.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "liam",
+    "direction": "[dryly]"
+  },
+  "a2362b60cba71b052284ad26ff096e191b539164869ebc8dbe548f153ba25882": {
+    "file": "a2362b60cba71b052284ad26ff096e191b539164869ebc8dbe548f153ba25882_784e03f725ae.mp3",
+    "speaker": "Ключник",
+    "text": "Хорошее вино... крепленое.. ого... вставляет знатно... ну неси еще... а вас уж двое... о... теперь уж трое... размножились делением поди... ну черти... ик... ты погоди... мне же еще трактат писать... о грешника душе, что в ад... хаха... вино то пить поинтересней... и для крови оно полезней... ",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "roger",
+    "direction": "[conversationally]"
+  },
+  "793be19ea284bffc54be9b427ec1a7520b353b384026345be2de7931237a3724": {
+    "file": "793be19ea284bffc54be9b427ec1a7520b353b384026345be2de7931237a3724_26c6b0fd1624.mp3",
+    "speaker": "Курильщик",
+    "text": "Куда побег?!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "liam",
+    "direction": "[dryly]"
+  },
+  "daed9a32baa7c4c15fadd31e1f7e65801630711fd0f780a80f2f263d37f6f33a": {
+    "file": "daed9a32baa7c4c15fadd31e1f7e65801630711fd0f780a80f2f263d37f6f33a_63b9879c3f47.mp3",
+    "speaker": "Курильщик",
+    "text": "Обратно!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "liam",
+    "direction": "[dryly]"
+  },
+  "6e21f7b5084b3c170138ea3be36e495243f8e259b19af40a3233cfd2118058da": {
+    "file": "6e21f7b5084b3c170138ea3be36e495243f8e259b19af40a3233cfd2118058da_36b0e1d3b764.mp3",
+    "speaker": "Курильщик",
+    "text": "Эй ты, патлатый, подойди сюда!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "liam",
+    "direction": "[dryly]"
+  },
+  "002d0a227038f1843e1e1ce27f3a793c58ca22dc32c1bdb5cf4605d1792e49c8": {
+    "file": "002d0a227038f1843e1e1ce27f3a793c58ca22dc32c1bdb5cf4605d1792e49c8_738dfd129264.mp3",
+    "speaker": "Курильщик",
+    "text": "Чего еще тут понимать? На кладбище нужно бежать!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "liam",
+    "direction": "[dryly]"
+  },
+  "6d0753d4e96f5396d7ea8868336b91221576edf632307466d82d62751af19407": {
+    "file": "6d0753d4e96f5396d7ea8868336b91221576edf632307466d82d62751af19407_922aa4ea6a50.mp3",
+    "speaker": "Курильщик",
+    "text": "Да мне не важно, кто ты лично. Подкинь в курильню-ка мне листьев. На кладбище там папоротник есть - его то мне и нужно сжечь.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "liam",
+    "direction": "[dryly]"
+  },
+  "03a4e5b4fdf18282658360aec63151a4d3468e4856ccb65a8e4010e949a6a314": {
+    "file": "03a4e5b4fdf18282658360aec63151a4d3468e4856ccb65a8e4010e949a6a314_575fb7022fda.mp3",
+    "speaker": "Повар",
+    "text": "А ну ка брысь! Ишь отожрались кошки! Похлебку уж воруют вместе с плошкой!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "will",
+    "direction": "[cheerfully]"
+  },
+  "0e92dec070b2e3b8d3ce92f2b8b32bc7cd20fb02ffef7bba017b274e8489210f": {
+    "file": "0e92dec070b2e3b8d3ce92f2b8b32bc7cd20fb02ffef7bba017b274e8489210f_4eb49e05315f.mp3",
+    "speaker": "Повар",
+    "text": "Допустим я тебе поверю, но вот на кухню не пущу, пока пропавшую посуду для супа я не отыщу.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "will",
+    "direction": "[cheerfully]"
+  },
+  "2798515b39baa3e52f411b43022e1f47a41732a0b8dc20ddb0f5c21bb20e52ec": {
+    "file": "2798515b39baa3e52f411b43022e1f47a41732a0b8dc20ddb0f5c21bb20e52ec_ca177d5c8016.mp3",
+    "speaker": "Повар",
+    "text": "Рыбы налови сначала, в котел потом добавь воды, посоли, да поперчи и на огонь скорей неси.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "will",
+    "direction": "[cheerfully]"
+  },
+  "667ee72a0e92fde602a78f516b89401d0a77848dd23b44564669c70038f2d15b": {
+    "file": "667ee72a0e92fde602a78f516b89401d0a77848dd23b44564669c70038f2d15b_1a0a7445fc0a.mp3",
+    "speaker": "Повар",
+    "text": "Ну что пришел глаза мазолить? Мне надо супа изготовить. Пройти коль хочешь - помоги мне котелок с водой найти.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "will",
+    "direction": "[cheerfully]"
+  },
+  "3ba9cb3f3c59a3a2752df6873a2c2ec0fb805c1661d4634e57a32950177fcefa": {
+    "file": "3ba9cb3f3c59a3a2752df6873a2c2ec0fb805c1661d4634e57a32950177fcefa_30ef9d0ffa3b.mp3",
+    "speaker": "Повар",
+    "text": "Сам вари, коли так хочешь. Я ленивый, между прочим. Лишь советом помогу от отравленья сберегу.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "will",
+    "direction": "[cheerfully]"
+  },
+  "f953b2d53c30a586b22714250e3ec204cbbfee8b2db82189f03f3a9a83846f6f": {
+    "file": "f953b2d53c30a586b22714250e3ec204cbbfee8b2db82189f03f3a9a83846f6f_2bf4446aaf24.mp3",
+    "speaker": "Смотритель",
+    "text": "А? Кто еще пришел тут побираться? Не дам я ничего и нечего просить.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "dd83f9197470a18f35f7389d626573e125d2cf510ae96edf315862cd6cf5b0ee": {
+    "file": "dd83f9197470a18f35f7389d626573e125d2cf510ae96edf315862cd6cf5b0ee_96536b1eae18.mp3",
+    "speaker": "Смотритель",
+    "text": "Вот помнится вчера к нам души завозили большие, но по пять, по три же те, что меньше. Тебе, прости, каких?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "569a58f3f2357ec69ce4d1a7c4fc3a5a49747c25e77cff0ad7801a437fc5c522": {
+    "file": "569a58f3f2357ec69ce4d1a7c4fc3a5a49747c25e77cff0ad7801a437fc5c522_ff42cda44582.mp3",
+    "speaker": "Смотритель",
+    "text": "Кто здесь? Я пятой точкой чувствую кого-то, но видеть не могу - я стар. Я очень стар.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "decc64ccef3201f1481cbe075663dc7f94fc12f422800b11e663bd63e4bacc55": {
+    "file": "decc64ccef3201f1481cbe075663dc7f94fc12f422800b11e663bd63e4bacc55_b4bc5d35c483.mp3",
+    "speaker": "Смотритель",
+    "text": "Лекарства бы от жадности тебе и антигубораскатин, производимый в Польше.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "e9bc99f4b1aa41476f55af093bfdcbc438590faa9eb538b5844751aa17e77bdc": {
+    "file": "e9bc99f4b1aa41476f55af093bfdcbc438590faa9eb538b5844751aa17e77bdc_6079337ad6e6.mp3",
+    "speaker": "Смотритель",
+    "text": "Да кто тут старый, старый кто? Я помню все - болтать мне не пристало.Но чтоб не сомневался подскажу - попробуй на погосте своротить плиту. Быть может именно под ней душа томится много дней.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "fb6e73214ce4f350803032f6e90500d41b52b6f4e593f0fae7d725b62fe9641f": {
+    "file": "fb6e73214ce4f350803032f6e90500d41b52b6f4e593f0fae7d725b62fe9641f_f19a0c05cc21.mp3",
+    "speaker": "Смотритель",
+    "text": "Не слышу! Что-то мне сказали?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "068ef5c758f205125d0608827cd386ef80a1d53ebb144b5d0d19f7ab67048cdd": {
+    "file": "068ef5c758f205125d0608827cd386ef80a1d53ebb144b5d0d19f7ab67048cdd_bf3828a22a72.mp3",
+    "speaker": "Смотритель",
+    "text": "Не понимаю отрок я тебя - давненько перестали слышать уши, и геморрой замучил уж меня.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "43f88bd6b7f8801dd8b119837512cfd1b34a66062d7911e5a5826e51761f52f4": {
+    "file": "43f88bd6b7f8801dd8b119837512cfd1b34a66062d7911e5a5826e51761f52f4_02da5fcaf3dc.mp3",
+    "speaker": "Смотритель",
+    "text": "Неужто слышу писк я мышки?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "32bc46db97c57f61555aef0d753aa0a5410b851900c860bd090bdcece8ccf18b": {
+    "file": "32bc46db97c57f61555aef0d753aa0a5410b851900c860bd090bdcece8ccf18b_5eb078d2305d.mp3",
+    "speaker": "Смотритель",
+    "text": "Ну что стоишь? Пока мерзавец спит, ты замени его топор предметом схожим, тогда тот не проснется. Ты действуй побыстрей, но будь и осторожен.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "4d9df85a24306f69164052b239ba503f2769105dc5747761e647597a64c957b3": {
+    "file": "4d9df85a24306f69164052b239ba503f2769105dc5747761e647597a64c957b3_395003aaf015.mp3",
+    "speaker": "Смотритель",
+    "text": "Он в обмороке? Он взбешен?! Ну ладно, черт, мы подождем. Когда проснется мерзкий хам, то будет выть он как Билан! Пока же ключ скорей бери и в монастырь ты заходи!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "5a377b9cb1c1cd75b454cfda9b74a930b4efb79761476886a1488110b3bb4e6e": {
+    "file": "5a377b9cb1c1cd75b454cfda9b74a930b4efb79761476886a1488110b3bb4e6e_d329c6772e7e.mp3",
+    "speaker": "Смотритель",
+    "text": "Очки мои найди, прежде чем внутрь ломиться. Тебя я разгляжу и все тогда решится. А уговаривать меня ты можешь хоть 4 дня - тут не поможет даже Аннан Кофи, в своей работе ведь я профи!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "5b9ed0dd3ee9c0d9a86bc696c46d74234d7eec89575b58bfa945b42f6facf966": {
+    "file": "5b9ed0dd3ee9c0d9a86bc696c46d74234d7eec89575b58bfa945b42f6facf966_7af888ff8bbd.mp3",
+    "speaker": "Смотритель",
+    "text": "Теперь я слышу чей-то голос мерзкий, противный, пафосный и дерзкий.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "9f8335de4b50547f36887a625c1444dea48d78714a0ab8d855467cac61fd915b": {
+    "file": "9f8335de4b50547f36887a625c1444dea48d78714a0ab8d855467cac61fd915b_1fbc13b8fee6.mp3",
+    "speaker": "Смотритель",
+    "text": "Неужто хочешь мне помочь? Ты, черт, хитер! Но я согласен. Вот тот палач Крылова любит басни. Я же того считаю мерзким вором и постоянно из-за этого мы спорим. Последний раз нахал назвал меня мартышкой без очков,захохотал и был таков! Обиды этой не стерплю и отомстить ему прошу. Ты укради его топор, таков наш будет уговор.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "3727ff241f7b42f78e57d1847370ff08576439429c303c47d8b813132bce7820": {
+    "file": "3727ff241f7b42f78e57d1847370ff08576439429c303c47d8b813132bce7820_c479cbdf7530.mp3",
+    "speaker": "Смотритель",
+    "text": "Твой голос странен и воняет чем-то. Уж не бомжа ли к нам принес сам черт? Свои очки я как назло посеял где-то, а ведь они мне стоили рублей пятьсот.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "fbbc9e167698c97d1f2228c0c465e719fde58758027e02a3be36c31ad82f8368": {
+    "file": "fbbc9e167698c97d1f2228c0c465e719fde58758027e02a3be36c31ad82f8368_26c350de7385.mp3",
+    "speaker": "Троглодит",
+    "text": "Вареной рыбки бы сейчас, чтоб на душе теплее стало.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "eric",
+    "direction": "[gruffly]"
+  },
+  "9f94baec9a4a6275f64ca1eaa12c873d0e473f8bb3183a23f85baf49fa39dc49": {
+    "file": "9f94baec9a4a6275f64ca1eaa12c873d0e473f8bb3183a23f85baf49fa39dc49_2b7a1ca4cf24.mp3",
+    "speaker": "Смотритель",
+    "text": "Ты - черт! О боже! Черт пришел ко мне! За что мне уготована судьба такая? Неужто помыслы о мести грубияну так пагубно сказались на судьбе?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "bill",
+    "direction": "[seriously]"
+  },
+  "4d6ffae4fb4339e928d8f3bfa0e4d122c1f3b202021042e667c72c12f63ba663": {
+    "file": "4d6ffae4fb4339e928d8f3bfa0e4d122c1f3b202021042e667c72c12f63ba663_f907c7c20818.mp3",
+    "speaker": "Троглодит",
+    "text": "Да ладно забирай свой сыр! Не надо мне тут лишних дыр. Только не трогай мой живот, а то могу я лопнуть, вот...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "eric",
+    "direction": "[gruffly]"
+  },
+  "8bbe6fd351ff1b1d7b240d592e55ffbe23db955b68014a4f6ea1be4490053347": {
+    "file": "8bbe6fd351ff1b1d7b240d592e55ffbe23db955b68014a4f6ea1be4490053347_c4fd0c285293.mp3",
+    "speaker": "Троглодит",
+    "text": "На лугу пасется ко... Придется подоить ее...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "eric",
+    "direction": "[gruffly]"
+  },
+  "9f8291db6972d150b7a6dea386df2a891078b7ca669b95d4d5907be844afff8e": {
+    "file": "9f8291db6972d150b7a6dea386df2a891078b7ca669b95d4d5907be844afff8e_31321d9eddfa.mp3",
+    "speaker": "Троглодит",
+    "text": "Да просто тупо я люблю поесть. А тебе чо? Вдруг интерес какой-то есть?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "eric",
+    "direction": "[gruffly]"
+  },
+  "88d7895b25b6344963ee1fb3ba02b95801bd61d5d447fcd072a8f137c170ee2d": {
+    "file": "88d7895b25b6344963ee1fb3ba02b95801bd61d5d447fcd072a8f137c170ee2d_506e7d25321e.mp3",
+    "speaker": "Троглодит",
+    "text": "Ну ты хитрец! Принес сырую рыбу. Сварить чтоль силы не хватило?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "eric",
+    "direction": "[gruffly]"
+  },
+  "de30327327248bb6091b13b0720983b4eab07db0c1ae10e595e111dbce982092": {
+    "file": "de30327327248bb6091b13b0720983b4eab07db0c1ae10e595e111dbce982092_10a4b9181ebd.mp3",
+    "speaker": "Троглодит",
+    "text": "Неужто ты готовить разучился? Найди посуду, рыбы налови, воды налей и на огонь неси, чтобы отменный супчик получился...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "eric",
+    "direction": "[gruffly]"
+  },
+  "ac2b839bd98488df80c6697a2dacf1e912a176ae64d6b0f0b218b9ed88923a05": {
+    "file": "ac2b839bd98488df80c6697a2dacf1e912a176ae64d6b0f0b218b9ed88923a05_8f905c3050eb.mp3",
+    "speaker": "Троглодит",
+    "text": "Ну вот, рыбешка хороша... Тащи теперь чтоль молока. Запить ведь чем то надо, а то не шоколадно.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "eric",
+    "direction": "[gruffly]"
+  },
+  "ac559be56953a52e5b0ba8ba9d30e3e7808c3b753ea06903b6ed89e7a2e469a9": {
+    "file": "ac559be56953a52e5b0ba8ba9d30e3e7808c3b753ea06903b6ed89e7a2e469a9_d25684b9ca6f.mp3",
+    "speaker": "Троглодит",
+    "text": "О! Вот и молочко поспело! Как вовремя! Теперь за дело! Сейчас его я с сыром выпью и вкусно будет мне и сытно.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "eric",
+    "direction": "[gruffly]"
+  },
+  "505338d751d09398568949f4323dfa889d84d3971c251af6993e595777e95462": {
+    "file": "505338d751d09398568949f4323dfa889d84d3971c251af6993e595777e95462_a9450833119c.mp3",
+    "speaker": "Троглодит",
+    "text": "Ой мне от рыбы дурно! Неси мне молока скорей, я не рыгнул покуда.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "eric",
+    "direction": "[gruffly]"
+  },
+  "9be278c3baf2e8f333182e1090371fddee344aea75037fca639490a0305a86f7": {
+    "file": "9be278c3baf2e8f333182e1090371fddee344aea75037fca639490a0305a86f7_3975843ce661.mp3",
+    "speaker": "Троглодит",
+    "text": "Свои грехи считай. В чужие то чего влезаешь?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "eric",
+    "direction": "[gruffly]"
+  },
+  "5752616b850a8b58261952abcff97278ba7a9e27d14c2e82a0dadda5c51a4e7f": {
+    "file": "5752616b850a8b58261952abcff97278ba7a9e27d14c2e82a0dadda5c51a4e7f_c838926511ec.mp3",
+    "speaker": "Чернокнижник",
+    "text": "А собственно ты кто такой?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "callum",
+    "direction": "[mysteriously]"
+  },
+  "ffbea2059bf88a487887793c683fa50d90ba71879d9dfddc838b3b01cd15b69b": {
+    "file": "ffbea2059bf88a487887793c683fa50d90ba71879d9dfddc838b3b01cd15b69b_7f9a54210c2b.mp3",
+    "speaker": "Черт",
+    "text": "...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "1c82237c43082a7596cf45e0cea8363185614d3c0343e9f7eeb7f94581c8d201": {
+    "file": "1c82237c43082a7596cf45e0cea8363185614d3c0343e9f7eeb7f94581c8d201_4c386bbaa203.mp3",
+    "speaker": "Чернокнижник",
+    "text": "А что теперь? Летим мы в рай?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "callum",
+    "direction": "[mysteriously]"
+  },
+  "002335021d8e1fd68e43053b6f2bea4d2445f82e0f2a525d96d7981b2779fced": {
+    "file": "002335021d8e1fd68e43053b6f2bea4d2445f82e0f2a525d96d7981b2779fced_5b3f3cc11159.mp3",
+    "speaker": "Троглодит",
+    "text": "Ты имя славить погоди. Ишь ты, нашелся друг нечистый. Взамен еды мне принеси, коль на словах такой ты быстрый.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "eric",
+    "direction": "[gruffly]"
+  },
+  "650e0128b57afac405c12888a577d3e5e5e822fa42a34ba134918ce5c3b36fe8": {
+    "file": "650e0128b57afac405c12888a577d3e5e5e822fa42a34ba134918ce5c3b36fe8_2ca5278d8341.mp3",
+    "speaker": "Черт",
+    "text": "А ну кончай ка обзываться! Как в лоб тебе сейчас я дам!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "3e8b8484cd399a88a1f526e83dc442af6b708ce2ca7134e46d32ae3f02c587c1": {
+    "file": "3e8b8484cd399a88a1f526e83dc442af6b708ce2ca7134e46d32ae3f02c587c1_4913439f8ea0.mp3",
+    "speaker": "Черт",
+    "text": "А дверь то закрыта и лбом в нее биться я смысла не вижу - уж лучше влюбиться. И так ведь и так заболит голова. Но случай второй он приятней весьма.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "545e34b6a3776bacb8e13853acea027fc9a8acdb6f2cfdebab4a69e17370a294": {
+    "file": "545e34b6a3776bacb8e13853acea027fc9a8acdb6f2cfdebab4a69e17370a294_5f9dd9cc6603.mp3",
+    "speaker": "Черт",
+    "text": "А есть там совет как урну открыть? Она ведь священна - ее ни схватить, разбить то подавно уж мне не удастся. Я не могу тронуть ее даже пальцем.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "511e6521675441645a1580cc00c904a6ab671968f5de1b4cc85f2919d661dfe2": {
+    "file": "511e6521675441645a1580cc00c904a6ab671968f5de1b4cc85f2919d661dfe2_4577a1ffbeaa.mp3",
+    "speaker": "Черт",
+    "text": "А кто же это предо мной? Неужто якадзун японский? Иль может это кит морской? Откуда ж ты такой весь толстый?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "7ce9f00d8c7b8b6768ff80a71000fa09c464d735be77296284a2182cf45214c4": {
+    "file": "7ce9f00d8c7b8b6768ff80a71000fa09c464d735be77296284a2182cf45214c4_3747864620ec.mp3",
+    "speaker": "Черт",
+    "text": "Ах ты безбожница!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "4558ff4c1d3126ceeb48e44676947b8519bcad0599b6ca416d3e8b480159ca34": {
+    "file": "4558ff4c1d3126ceeb48e44676947b8519bcad0599b6ca416d3e8b480159ca34_d3746e8e4935.mp3",
+    "speaker": "Черт",
+    "text": "Ай! Не подходит здесь это, Нео. Похоже, нас опять поимела система.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "e5aef7e0f055d6fd2db3531a68208c30c64fd09848b49dd91735b5f1b86ce849": {
+    "file": "e5aef7e0f055d6fd2db3531a68208c30c64fd09848b49dd91735b5f1b86ce849_f4a5f9c43b73.mp3",
+    "speaker": "Черт",
+    "text": "Ай, как же жжет неимоверно! Опять я на костре - не дело. Но видно такова судьба. Ой тяжела же жизнь моя!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "bef73b746cd5f6556f7c28322900837c9425b06ad4d459f25eb94c18af4c9d81": {
+    "file": "bef73b746cd5f6556f7c28322900837c9425b06ad4d459f25eb94c18af4c9d81_f6b7f13c96dd.mp3",
+    "speaker": "Черт",
+    "text": "Вот и готово наше вино, теперь бы тару найти под него.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "376bd30ac13737a99626a18634e9370d8eb0c21a83e72858daed28545ff585e4": {
+    "file": "376bd30ac13737a99626a18634e9370d8eb0c21a83e72858daed28545ff585e4_959e42a52aae.mp3",
+    "speaker": "Черт",
+    "text": "Болты бы закрутить сильнее, а то сломался Франкенштейн. Тут без ключа не обойдемся. Verstehen или nicht verstehen?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "88dc8f50e5eb1f36a3379ca5461b55bcdf60e758aa0ae10898bbed83afcb084d": {
+    "file": "88dc8f50e5eb1f36a3379ca5461b55bcdf60e758aa0ae10898bbed83afcb084d_54d4c3f35231.mp3",
+    "speaker": "Черт",
+    "text": "Вот окоянные... как жжется. Опять я на костре горю. И проклинать уж надоело тяжелую судьбу мою",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "6d82c49d5981cbadea211ca597c49d1069cda3cfaf637dcde1e7ff7ce2f49c3d": {
+    "file": "6d82c49d5981cbadea211ca597c49d1069cda3cfaf637dcde1e7ff7ce2f49c3d_5dad3b2a0ef2.mp3",
+    "speaker": "Черт",
+    "text": "Вот так новый поворот! Что он на этот раз мне принесет?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "2892848bde019f2eef490f54ff335fa88b347ce50b7f248eae5ff3df4497d7fe": {
+    "file": "2892848bde019f2eef490f54ff335fa88b347ce50b7f248eae5ff3df4497d7fe_e5820822c38d.mp3",
+    "speaker": "Черт",
+    "text": "Вставай-ка, Донна Анна!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "df2d69b01826fb7a7a7c5532c557698528fb9f468b909c9c848be307b9e31515": {
+    "file": "df2d69b01826fb7a7a7c5532c557698528fb9f468b909c9c848be307b9e31515_eada9e9fe830.mp3",
+    "speaker": "Черт",
+    "text": "Да все успешно - повезло! Вот амулет тебе принес.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "45d9a933bdd851174166bafbf7e43de70bcbe1d017b80aeecfd1a35ae789f109": {
+    "file": "45d9a933bdd851174166bafbf7e43de70bcbe1d017b80aeecfd1a35ae789f109_f4cb5148316e.mp3",
+    "speaker": "Черт",
+    "text": "Да мне бы маслица немножко, разжечь лампаду в темноте.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "e9cae80aae61677429b3bb020841d224531d36e9f6cc630513376efcf28f83cb": {
+    "file": "e9cae80aae61677429b3bb020841d224531d36e9f6cc630513376efcf28f83cb_808e19983b4a.mp3",
+    "speaker": "Черт",
+    "text": "Да нафига они нужны? Костер разжечь иль в туалет пойти?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "11be7094af54eee6bf1817ce6a70dfcee826e64f59d9456d2eaa03773b79fe6c": {
+    "file": "11be7094af54eee6bf1817ce6a70dfcee826e64f59d9456d2eaa03773b79fe6c_1398336fb05e.mp3",
+    "speaker": "Черт",
+    "text": "Да погоди ты гневаться, послушай, что я хочу еще тебе сказать. Я слышал тут в монастыре есть души, а я их должен как бы собирать.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "0eb7b8592f6ec534e8306b4f7df21015d0bc7ec30945901a5529ce5b5983b882": {
+    "file": "0eb7b8592f6ec534e8306b4f7df21015d0bc7ec30945901a5529ce5b5983b882_d420291e507f.mp3",
+    "speaker": "Черт",
+    "text": "Да задал умник мне задачу - ему для лампы масло подавай, но я не унываю и не плачу, ведь я уже джедай - не падаван. Вот только где б его мне взять? Монахов чтоли поспрошать?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "d023dfc8cfc0f413481bcc23c89a4b8e1011cae25a73e137697b951a17473e8c": {
+    "file": "d023dfc8cfc0f413481bcc23c89a4b8e1011cae25a73e137697b951a17473e8c_5317ff515efc.mp3",
+    "speaker": "Черт",
+    "text": "Да что-то дам я тут не вижу, а то б вручил ромашковый букет.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "df104421b30ba88490faed17e4b4b1de335b181db27afe3f4ac45f216d13cef7": {
+    "file": "df104421b30ba88490faed17e4b4b1de335b181db27afe3f4ac45f216d13cef7_72b1b19e32d8.mp3",
+    "speaker": "Черт",
+    "text": "Да уж я представляю возможности твои, но мне лишь интересно скорее в сад пройти.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "41f64b8653581664f238504701472150aac4ed98d7ff5d927dda72691f7bc17d": {
+    "file": "41f64b8653581664f238504701472150aac4ed98d7ff5d927dda72691f7bc17d_a139f26e5fc5.mp3",
+    "speaker": "Черт",
+    "text": "Да, да тот самый я. Пришел узнать, не нужно ли чего.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "165ac106f76cf77510c6a096f21dd79df80007c5e97ea1d80eb93f966a79cff2": {
+    "file": "165ac106f76cf77510c6a096f21dd79df80007c5e97ea1d80eb93f966a79cff2_41bab9072423.mp3",
+    "speaker": "Черт",
+    "text": "Дверь открыта и вперед! Кто последний, тот не черт.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "bb8d9ed1509cb53e81a21a55cfb13c9a0adbf0d443ebea85a01ccd8ccd75cfee": {
+    "file": "bb8d9ed1509cb53e81a21a55cfb13c9a0adbf0d443ebea85a01ccd8ccd75cfee_66cbe153b612.mp3",
+    "speaker": "Черт",
+    "text": "Действительно, там алкоголь. Вот оказалась в чем вся соль. Ты говорил мне о душе?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "5219b86bddb1e702398f2b5ec8a08274f3aca6893dede930e654c7c55f14b839": {
+    "file": "5219b86bddb1e702398f2b5ec8a08274f3aca6893dede930e654c7c55f14b839_d301c561f541.mp3",
+    "speaker": "Черт",
+    "text": "Да, толку уж с него не будет. Тут и философ все забудет. Про пьяницу я уж молчу - отдал он дань свою вину. Я огляжусь пока вокруг. Ты сладко спи теперь, мой друг.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "653677113a3b1eae19cc147cddbfc79220dc792a5c604b3793fd881d6fa5a63e": {
+    "file": "653677113a3b1eae19cc147cddbfc79220dc792a5c604b3793fd881d6fa5a63e_17598f55aeef.mp3",
+    "speaker": "Черт",
+    "text": "Довольно пафоса, отец! Так кто же этот молодец, кому ты отомстить решил, да чем же он так согрешил?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "a5d6a2ed6d6a35864763bbd1fde4bbc6e144f2b6b1a2a4b64ede2117304d073c": {
+    "file": "a5d6a2ed6d6a35864763bbd1fde4bbc6e144f2b6b1a2a4b64ede2117304d073c_9c37b9b860e8.mp3",
+    "speaker": "Черт",
+    "text": "Завет благодетель хранить. Не могу я его пропустить. Вместо него Камасутру оставлю. Сей ценный трактат средь монахов прославлю.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "1c9457d029b5b8f9b11b4f96db41529338f255a3cf01789121a07366ad0e440f": {
+    "file": "1c9457d029b5b8f9b11b4f96db41529338f255a3cf01789121a07366ad0e440f_ad0079e43f80.mp3",
+    "speaker": "Черт",
+    "text": "И на том тебе спасибо. Суп хочу сварить из рыбы, что для этого мне нужно? Помоги-ка мне по дружбе.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "a8f8c8a3b5cfb87a4ffc189dc1ab0674887dcffe0867d6c7093a16db1988513b": {
+    "file": "a8f8c8a3b5cfb87a4ffc189dc1ab0674887dcffe0867d6c7093a16db1988513b_acf3cfbb9a19.mp3",
+    "speaker": "Черт",
+    "text": "Идти не могу. Дверь закрыта на замок. Ключ надо найти.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "edd762b0b587911ca72e3d9576d0be5c5fea1147e63d24fe404c8d4acf049eca": {
+    "file": "edd762b0b587911ca72e3d9576d0be5c5fea1147e63d24fe404c8d4acf049eca_c93589e69a81.mp3",
+    "speaker": "Черт",
+    "text": "Какого еще молока? Где ж я возьму его то а? ",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "2fd6da945b4886a54ccb4259bd152eb2003eb11f72bbd175810f8945faacf165": {
+    "file": "2fd6da945b4886a54ccb4259bd152eb2003eb11f72bbd175810f8945faacf165_9149ef4c16e4.mp3",
+    "speaker": "Черт",
+    "text": "Какой еды тебе еще? Вот черная дыра - все мало.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "235c2fdeeb7df676adbe951ff5468cfb483724fe18322d9ce524a88bcc93639d": {
+    "file": "235c2fdeeb7df676adbe951ff5468cfb483724fe18322d9ce524a88bcc93639d_60c319d6fe49.mp3",
+    "speaker": "Черт",
+    "text": "Котел с водой стоит на огне. Рыбы осталось достать мне.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "420ae401d39e7a6f243b5135a5810dd1d0fd30817e49195675be495fa8a1576d": {
+    "file": "420ae401d39e7a6f243b5135a5810dd1d0fd30817e49195675be495fa8a1576d_d314ff70780c.mp3",
+    "speaker": "Черт",
+    "text": "Куда бежать то не понятно?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "1a3c903c83442060bb8891e094d89daf3992ed50afb98f3b9c43fed7920832b3": {
+    "file": "1a3c903c83442060bb8891e094d89daf3992ed50afb98f3b9c43fed7920832b3_2245fec4b2f8.mp3",
+    "speaker": "Черт",
+    "text": "Конечно - вещи собирай! Крем от загара захвати, а шубу с шапкой не бери - у нас сейчас там лето, полно жары и света!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "e582b9ac56b2843bbef99f04755e1d42b3bd8c9b4b5b141e056449cd352b2f54": {
+    "file": "e582b9ac56b2843bbef99f04755e1d42b3bd8c9b4b5b141e056449cd352b2f54_56933c5cfe24.mp3",
+    "speaker": "Черт",
+    "text": "Куда туда?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "97d4fcb83a351f5da4eec2cdbf91543b7c1d00b2dc41a7c50dbfd85baa444de6": {
+    "file": "97d4fcb83a351f5da4eec2cdbf91543b7c1d00b2dc41a7c50dbfd85baa444de6_3432411d6f09.mp3",
+    "speaker": "Черт",
+    "text": "Куда же дамы подевались, что в этом месте укрывались?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "ab85843ffd4d6e893e16cc61a55b7c5397a70ede9916adab03bd36f34594f9c2": {
+    "file": "ab85843ffd4d6e893e16cc61a55b7c5397a70ede9916adab03bd36f34594f9c2_d579ccac0df8.mp3",
+    "speaker": "Черт",
+    "text": "Крыша объята пламенем, сносит чердак. Но нам воды не надо - пусть будет так. Пусть горит чертяга синим огнем. Гори, черт, гори, а мы зажжем!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "2f10e803309cd31e481d6fe6f118a329cebb3fde7041c047b8be28205a0de99a": {
+    "file": "2f10e803309cd31e481d6fe6f118a329cebb3fde7041c047b8be28205a0de99a_68c6cec7d22b.mp3",
+    "speaker": "Черт",
+    "text": "Молилась ли ты на ночь, дочь моя?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "6067bda181475113bd2957435f2ce6df574ce7f7b93cbafb3c1fb2585a30d69e": {
+    "file": "6067bda181475113bd2957435f2ce6df574ce7f7b93cbafb3c1fb2585a30d69e_bdc8ea6d6471.mp3",
+    "speaker": "Черт",
+    "text": "Лежит здесь сэр Биплан, угодник и любимец дам.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "e1586541d352a2a45e784226f9c7cab998c8c2e705c8aec10986389eba34542b": {
+    "file": "e1586541d352a2a45e784226f9c7cab998c8c2e705c8aec10986389eba34542b_cf729ce8f4f9.mp3",
+    "speaker": "Черт",
+    "text": "Мууу!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "69f14feced0257f34bccb6211795c37809d6201e0068c763a58259821509a9f3": {
+    "file": "69f14feced0257f34bccb6211795c37809d6201e0068c763a58259821509a9f3_73aedb6830cd.mp3",
+    "speaker": "Черт",
+    "text": "Не там.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "255435a1d61beed3a620200f65b1e3d9af9a6c06f350e910485e52ab7b4b6bab": {
+    "file": "255435a1d61beed3a620200f65b1e3d9af9a6c06f350e910485e52ab7b4b6bab_49c601f37935.mp3",
+    "speaker": "Черт",
+    "text": "Лежит здесь медвед, который превед сказал в тот момент, когда красавчиг свой сунул пальчиг, но не сплоховал и тут же стрелял прямо в медведа, который преведа уж больше не скажет.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "c9c9044b63a65a87eb0e4e041f679207e818e4b9eb702dc869ad353f1a5d4a4b": {
+    "file": "c9c9044b63a65a87eb0e4e041f679207e818e4b9eb702dc869ad353f1a5d4a4b_2340b5778111.mp3",
+    "speaker": "Черт",
+    "text": "Неужто не узнал, ведь я...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "4c1b242a7f9d409d14e6c3301f205962e2e9880930ce9e0c846482d658731ae4": {
+    "file": "4c1b242a7f9d409d14e6c3301f205962e2e9880930ce9e0c846482d658731ae4_88b89931e2c4.mp3",
+    "speaker": "Черт",
+    "text": "Не брал я ничего - не надо! Тут возводить напраслину! Я честный черт - чужого не ворую, лишь то, что общее беру.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "ccf43a3370facd91c88e9eec1f61880be5daee700aee401685dfddebe4470f7f": {
+    "file": "ccf43a3370facd91c88e9eec1f61880be5daee700aee401685dfddebe4470f7f_a8849276366a.mp3",
+    "speaker": "Черт",
+    "text": "Неужто ты не знаешь, где тут что? Забыл поди, пенек ты старый.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "a35aa60a794b88f4454fcd48d99ff19e1874b63650d3d1f9445634ddcda222d8": {
+    "file": "a35aa60a794b88f4454fcd48d99ff19e1874b63650d3d1f9445634ddcda222d8_606e91532871.mp3",
+    "speaker": "Черт",
+    "text": "Обжорство - тяжкий грех, неужто ты не знаешь?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "94cc62371e84f972b467eb5004386b5353dfe7e69aca80e92f82d940f33e9b58": {
+    "file": "94cc62371e84f972b467eb5004386b5353dfe7e69aca80e92f82d940f33e9b58_4312c0a54ff7.mp3",
+    "speaker": "Черт",
+    "text": "Одумался ты вовремя, дружок - прощаю я тебе должок.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "574ccaa3839c057facd56f90c646bd62cfa36c6b63a364b41b50e4fd415a84b9": {
+    "file": "574ccaa3839c057facd56f90c646bd62cfa36c6b63a364b41b50e4fd415a84b9_aee708ed476a.mp3",
+    "speaker": "Черт",
+    "text": "О! В книге старинная гравюра. Поп не может оторвать попу от стула. Рядом монашек что-то лопочет. Не понятно, чего он хочет.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "071fbbc66937aefeb2cfd4142ff170c38d328441e2a86aaa49b000bd04c3b9b4": {
+    "file": "071fbbc66937aefeb2cfd4142ff170c38d328441e2a86aaa49b000bd04c3b9b4_15569e20cd57.mp3",
+    "speaker": "Черт",
+    "text": "Ну  что ж, работа сделана моя - cчет ада с раем вновь сравнялся. И поспешу-ка в отпуск я, пока на новое заданье не нарвался. Удачи, бай, адью, аревуа!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "53177fb2d38b0bfbff34a185b1927e0b0e56e30938ad1c53bb13f71ea6db9e38": {
+    "file": "53177fb2d38b0bfbff34a185b1927e0b0e56e30938ad1c53bb13f71ea6db9e38_90b61dd718bd.mp3",
+    "speaker": "Черт",
+    "text": "Осторожно, двери открываются. Пристегните ремни - черт внутрь отправляется.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "b6b6f5cd89e191f0363e3e09ff880230d364a4330a64d771720b818683cf3372": {
+    "file": "b6b6f5cd89e191f0363e3e09ff880230d364a4330a64d771720b818683cf3372_e850f3f788de.mp3",
+    "speaker": "Черт",
+    "text": "Пахнет тут прям как в родных краях. Запах серы... Аж слезы в глазах.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "b28532cd06d7b6dcaa7c8755bb49a9cef33095e9f4dafac567c14437bb83c44e": {
+    "file": "b28532cd06d7b6dcaa7c8755bb49a9cef33095e9f4dafac567c14437bb83c44e_c99d66b00740.mp3",
+    "speaker": "Черт",
+    "text": "Отдай сейчас же сыр сюда, я не разгневался пока, а то защекочу до дыр и будешь сам почти что сыр!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "fc253af1730f02a892baa7fccfa0607a964bc0341db9e5d5f47db069cd530730": {
+    "file": "fc253af1730f02a892baa7fccfa0607a964bc0341db9e5d5f47db069cd530730_aafd222e5e8b.mp3",
+    "speaker": "Черт",
+    "text": "Побольше мне, побольше!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "01512beb84f24cd38667b6b21519c7136ee623ec868066fe0a0146b9ffa5116f": {
+    "file": "01512beb84f24cd38667b6b21519c7136ee623ec868066fe0a0146b9ffa5116f_2f14dc26b7f4.mp3",
+    "speaker": "Черт",
+    "text": "Погодь, отец. Ты подскажи, где душу грешную найти.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "01ac91842027e8dc50310f8d7053b1516e2b037847061062063dbcf914bdb542": {
+    "file": "01ac91842027e8dc50310f8d7053b1516e2b037847061062063dbcf914bdb542_a22407ccab5e.mp3",
+    "speaker": "Черт",
+    "text": "Привет, глухой пенек с ушами!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "194ccf3534d67b702b24f2b873b5ec9396fbde6120aeca116f2451d760c1eeb6": {
+    "file": "194ccf3534d67b702b24f2b873b5ec9396fbde6120aeca116f2451d760c1eeb6_7a43d7566b85.mp3",
+    "speaker": "Черт",
+    "text": "Предпочитаю я проверить. Ты помоги мне стену вскрыть и душу грешную добыть.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "6b6f4b1b6066aee4412d85e91d72abdd7cbc2ea87497f1aebf9dff2564b0bed8": {
+    "file": "6b6f4b1b6066aee4412d85e91d72abdd7cbc2ea87497f1aebf9dff2564b0bed8_972d5f71d82e.mp3",
+    "speaker": "Черт",
+    "text": "Привет, дедуля, мне бы внутрь пробраться. Ты уж изволь мне монастырь открыть.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "39d44e3b37305220704ce33a58dfa86e93a57012510de0608e62742e50cfbfb7": {
+    "file": "39d44e3b37305220704ce33a58dfa86e93a57012510de0608e62742e50cfbfb7_b14620537bb6.mp3",
+    "speaker": "Черт",
+    "text": "Привет, маэстро, дело есть! Суп свари-ка мне поесть.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "e784f6dfe92c6898f281bffd210da8dd63b9ec279503afe2d717ea3108e32b14": {
+    "file": "e784f6dfe92c6898f281bffd210da8dd63b9ec279503afe2d717ea3108e32b14_3c7eb5ac8218.mp3",
+    "speaker": "Черт",
+    "text": "Привет, дедуля. Как настрой в подвале? Не все ли крысы съели, а?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "9bb4b0c8a5124d4d02e352cfd89aa5e915c250288327b05b2b2a72f8aa91d3d7": {
+    "file": "9bb4b0c8a5124d4d02e352cfd89aa5e915c250288327b05b2b2a72f8aa91d3d7_5a8c0ceef686.mp3",
+    "speaker": "Черт",
+    "text": "Песок аж сыплется вокруг. Эх, вывезти его бы да продать кому, да вот РУБОП нагрянуть может вдруг и обломать коммерцию мою. А впрочем не о том сейчас твержу я... Учиться в город брел я. Уморился. И тут как света луч ваш монастырь во тьме! Сначала было уж я удивился. Но позже понял, где искать ночлега мне.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "0eb899d39dd52bfcc0ce1504a6555b257a810d128e3de59104b1c5ad323f664d": {
+    "file": "0eb899d39dd52bfcc0ce1504a6555b257a810d128e3de59104b1c5ad323f664d_e382e46417fe.mp3",
+    "speaker": "Черт",
+    "text": "Прожорливейший троглодит! Тебя бы самого доить!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "34a17f6147b71ad04dd7f2e189a028dc4e02390f8f860c67439cd01b9a74f6ac": {
+    "file": "34a17f6147b71ad04dd7f2e189a028dc4e02390f8f860c67439cd01b9a74f6ac_a45cc9b9b55f.mp3",
+    "speaker": "Черт",
+    "text": "Прыщи и бородавки вызывает? Ох, что-то воздуха мне не хватает...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "5192b25cf3016d45adeb96f707294a2b7e4c47cff16d1a1f53b3b8e8ae9b82cf": {
+    "file": "5192b25cf3016d45adeb96f707294a2b7e4c47cff16d1a1f53b3b8e8ae9b82cf_44f1c4da87be.mp3",
+    "speaker": "Черт",
+    "text": "Привет, сударыня корова! Смотрю ты выглядишь здорово! Ты сколько обычно даешь молока? Доить не устанет чертяги рука?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "fdf36736a623346b52ee1060412fb9abe2b2f445c3f8f6979ce99e86ede5f82f": {
+    "file": "fdf36736a623346b52ee1060412fb9abe2b2f445c3f8f6979ce99e86ede5f82f_f76dee4be52f.mp3",
+    "speaker": "Черт",
+    "text": "Самая красивая девушка в мире Пистолетова Катя лежит в могиле. Плачут фанаты, рыдает отец. Катя подохла, бесславный конец.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "49b7dd0eeed1c169d51a549142d02a3535b389f3e6e4cf64026446a11c568ccb": {
+    "file": "49b7dd0eeed1c169d51a549142d02a3535b389f3e6e4cf64026446a11c568ccb_470654dea0c1.mp3",
+    "speaker": "Черт",
+    "text": "Слышу мышь скребет. Маленький пушистый зверь. Пугает многих.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "7970b44f471e3b478b4ab2326613f92178bafb11101ff0496a0df97c413a50ab": {
+    "file": "7970b44f471e3b478b4ab2326613f92178bafb11101ff0496a0df97c413a50ab_e83534a2a518.mp3",
+    "speaker": "Черт",
+    "text": "Стучу, ломлюсь - закрыта дверь. Придется поискать ключей.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "f5152bf98695d224de2f4dea28f91a8018d1fd8c916cdf00f614e14c369e8f82": {
+    "file": "f5152bf98695d224de2f4dea28f91a8018d1fd8c916cdf00f614e14c369e8f82_40021df1e680.mp3",
+    "speaker": "Черт",
+    "text": "Туда...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "bc177a1b0477064487f3f43ec248b03e28cde4d50dd47e9847038af8d2c21456": {
+    "file": "bc177a1b0477064487f3f43ec248b03e28cde4d50dd47e9847038af8d2c21456_eb9b6ac0f09e.mp3",
+    "speaker": "Черт",
+    "text": "Тебе, пожалуй, помогу от искушения избавлю. Головку сыра заберу и имя доброе прославлю.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "e3c9346b947546fa895220b44747f520915d60523954ebc5a7d056e7d15008eb": {
+    "file": "e3c9346b947546fa895220b44747f520915d60523954ebc5a7d056e7d15008eb_6b66a5fe2cf1.mp3",
+    "speaker": "Черт",
+    "text": "Ты не подскажешь, где у вас тут души?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "201355e63adfd0db35990e67d4b3661acfc85880d24f3f7162fa51a7fb25528d": {
+    "file": "201355e63adfd0db35990e67d4b3661acfc85880d24f3f7162fa51a7fb25528d_e2e521ee3f77.mp3",
+    "speaker": "Черт",
+    "text": "Ты уважаемый мне не подскажешь, где у вас души тут хранят?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "880c46c13f28e9f829c065ba9636c2ad176d2fe5c22788ad82419802cd728b99": {
+    "file": "880c46c13f28e9f829c065ba9636c2ad176d2fe5c22788ad82419802cd728b99_389adacb413d.mp3",
+    "speaker": "Черт",
+    "text": "Фухх. А я то уж думал... Слава чертям...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "370738b1f1beb6a2522ecea5f26cddd896dbcb5fa26cc825563a8522e2bdb23f": {
+    "file": "370738b1f1beb6a2522ecea5f26cddd896dbcb5fa26cc825563a8522e2bdb23f_bd8be7cbfae3.mp3",
+    "speaker": "Черт",
+    "text": "Ты погоди полы тут пачкать! Реши сначала вот задачку. Упоминал ты о душе. Изволь поведать о ней мне...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "da5a515ada066560b7848c0f2d43a7f6672144495cc4e218ba97b1734e71c34e": {
+    "file": "da5a515ada066560b7848c0f2d43a7f6672144495cc4e218ba97b1734e71c34e_7245c36ef0cb.mp3",
+    "speaker": "Черт",
+    "text": "У вас рога такие, копыта очень стройные и добрая душа. А если вы споете... нет, лучше уж молчите!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "34bfea6ec785594bbef0cb5b0dcaa9e0beaa1ade96f9f54922296fa0fc490c21": {
+    "file": "34bfea6ec785594bbef0cb5b0dcaa9e0beaa1ade96f9f54922296fa0fc490c21_9cd6800e110e.mp3",
+    "speaker": "Черт",
+    "text": "Что за душа? О чем трактат?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "00846c8d1540577869852cf62e72361e61b31785848cad8f7d4c755ae8555688": {
+    "file": "00846c8d1540577869852cf62e72361e61b31785848cad8f7d4c755ae8555688_ba884b1776f7.mp3",
+    "speaker": "Черт",
+    "text": "Чего то не хватает тут! Найди предмет и будешь крут!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "5eddc20b0a9f9780ccb979bf0c37da3f2c1d160db1517fc47e83fe3aa9ba7c7a": {
+    "file": "5eddc20b0a9f9780ccb979bf0c37da3f2c1d160db1517fc47e83fe3aa9ba7c7a_3250cae889dd.mp3",
+    "speaker": "Черт",
+    "text": "Холодная вода внутри и плещется чего-то. Туда я не хочу идти - купаться не люблю до рвоты!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "b7572023f034654122ba2df2b56495d7d9b324e593b1d0ef15ee0419a7330776": {
+    "file": "b7572023f034654122ba2df2b56495d7d9b324e593b1d0ef15ee0419a7330776_7bcc556a7520.mp3",
+    "speaker": "Черт",
+    "text": "Чтож в этом случае я рад! Дорога наша прямо в ад!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "6560d7556f4c0efbe2bfcc66d6516f12493a02317b37c08621f4016932a771b9": {
+    "file": "6560d7556f4c0efbe2bfcc66d6516f12493a02317b37c08621f4016932a771b9_7d3e15ed19a2.mp3",
+    "speaker": "Черт",
+    "text": "Эй ты, кусок божественной отрыжки!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "6a3345ac7269af0df7fd9473b47e120699655695ee36bfa1f3f357fba5bdd2f4": {
+    "file": "6a3345ac7269af0df7fd9473b47e120699655695ee36bfa1f3f357fba5bdd2f4_fc4c59c9215b.mp3",
+    "speaker": "Черт",
+    "text": "Э не. Не надо мне небес. Я же не ангел - я ведь бес! Теперь чего-нибудь взорву и душу в пекло утащу.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "f182f61b35131f347e966ff5b056f302b5df0a026fc9cfe47bd6bb60147e45cf": {
+    "file": "f182f61b35131f347e966ff5b056f302b5df0a026fc9cfe47bd6bb60147e45cf_d3e7e1076560.mp3",
+    "speaker": "Черт",
+    "text": "Эй, красавчиг, предлагаю другое решение проблемы. Попробуй побиться головой об стены!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "3fe56a9f34010e22c4da7a2218c1d3ab5abea00b96d43d34e771dd3d5cb5570a": {
+    "file": "3fe56a9f34010e22c4da7a2218c1d3ab5abea00b96d43d34e771dd3d5cb5570a_57afdd6049ab.mp3",
+    "speaker": "Черт",
+    "text": "Что пишет пресса? Сожжение ведьм - тема не без интереса. А вот и рецепт. Ну-ка прочтем, чтоб получиться знаний довесок. Берете котел, его на огонь, потом довести до кипенья. Ведьму суете и пол-часа ждете ее приготовленья.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "3c9bc015ca9e9daa3eac149a9527cfcb0531c454bce39449e4b9c6dfb782affd": {
+    "file": "3c9bc015ca9e9daa3eac149a9527cfcb0531c454bce39449e4b9c6dfb782affd_46dbb4e3c2ef.mp3",
+    "speaker": "Черт",
+    "text": "Эй, ты, пропоица, вставай! Да на вопрос мне отвечай!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "51ecd5a8c601e88743c620da3676ae6dfabfb05e3b100ef3c5e84e534f78166d": {
+    "file": "51ecd5a8c601e88743c620da3676ae6dfabfb05e3b100ef3c5e84e534f78166d_13a2d13ebb54.mp3",
+    "speaker": "Черт",
+    "text": "Эй, отрок, ну-ка поднимайся - пора в дорогу нам. Ты что-то сильно завалялся по темным и пыльным углам. А впереди тебя ждет свет, тепло и ароматы ада, кнута удары и купанье в лаве - ну что еще для счастья надо?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "9ad87afdf2f758e0102d36576fd16a2c5d10c34a61c4707d41b654f5e51d62f1": {
+    "file": "9ad87afdf2f758e0102d36576fd16a2c5d10c34a61c4707d41b654f5e51d62f1_454fd0d3e0d7.mp3",
+    "speaker": "Черт",
+    "text": "Эй, я просил налить мне масла, а не анализы мочи. Шутить со мной вот так опасно - я ж черт, а не медбрат поди!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "109d9f87f07cc595e10534c40a8869202013373d3b6f44750613b39bcbf864a9": {
+    "file": "109d9f87f07cc595e10534c40a8869202013373d3b6f44750613b39bcbf864a9_a6783dc1cb8f.mp3",
+    "speaker": "Черт",
+    "text": "Я достаю из широких штанин веревку крупкой вязки! Сейчас повешу ее наверх и в колокол ударю для встряски!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  }
+}

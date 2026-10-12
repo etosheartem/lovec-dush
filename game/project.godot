@@ -1,0 +1,41 @@
+config_version=5
+
+[application]
+
+config/name="Ловец душ"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.7", "Mobile")
+config/icon="res://assets/hd/ui/icon_hd.png"
+boot_splash/image="res://assets/qhd/ui/splash.png"
+boot_splash/bg_color=Color(0.035, 0.027, 0.02, 1)
+boot_splash/fullsize=true
+boot_splash/use_filter=true
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=960
+window/size/window_height_override=540
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
+window/handheld/orientation=0
+
+[input_devices]
+
+pointing/emulate_mouse_from_touch=true
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
+
+textures/canvas_textures/default_texture_filter=3
+renderer/rendering_method="mobile"
+
+[importer_defaults]
+
+texture={
+"compress/mode": 0,
+"detect_3d/compress_to": 0,
+"mipmaps/generate": true
+}

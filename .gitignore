@@ -1,0 +1,42 @@
+# Godot 4: кэш импорта и учётки экспорта (пароли keystore живут в .godot/export_credentials.cfg)
+.godot/
+.import/
+*.translation
+mono_crash.*.json
+
+# Сборки
+build/
+*.apk
+*.aab
+*.idsig
+android/build/
+
+# Ключи подписи — никогда в репозиторий
+*.keystore
+*.jks
+*.p12
+*.pem
+keystore.properties
+
+# Секреты
+.env
+.env.*
+*.key
+
+# Python (game/tests/run_checks.py)
+__pycache__/
+*.py[cod]
+.venv/
+
+# Мусор
+core
+core.*
+*.tmp
+*.bak
+*.log
+*.swp
+*~
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

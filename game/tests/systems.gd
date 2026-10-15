@@ -81,6 +81,7 @@ func _run() -> void:
 	test_backup()
 	test_malformed_saves()
 	test_debug_paths()
+	test_grave_tap()
 	# Let AudioServer commit play/stop commands before releasing looping streams.
 	await create_timer(0.15).timeout
 	for game in retired:
@@ -395,6 +396,16 @@ func test_debug_paths() -> void:
 	var doorway: Vector2 = game._exit_rect(gate).get_center()
 	check(not gate.open and not game._exit_open(gate), "normal gate availability uses its saved locked state")
 	check(game._hit(doorway).kind != "exit", "locked gate cannot be selected in normal gameplay")
+	retire(game)
+
+
+func test_grave_tap() -> void:
+	var game = fresh("", "grave_tap.cfg")
+	idle(game)
+	game.cur_key = "6,2"
+	var anna: Dictionary = game._npc("6,2", 3)
+	var hit: Dictionary = game._hit(Vector2(195, 100))  # тап по кресту на могиле
+	check(hit.kind == "npc" and hit.npc == anna, "Anna's grave is tappable while her sprite frame is empty")
 	retire(game)
 
 

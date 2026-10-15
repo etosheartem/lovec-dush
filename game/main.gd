@@ -641,6 +641,9 @@ func _npc_rect(e: Dictionary) -> Rect2:
 	var tx := _orig("%s/%d" % [a.sheet, a.frame()])
 	var anc: Array = SPR[a.sheet].anchors[a.frame()]
 	var lift := 0 if e.blocker else 10
+	if tx.get_width() <= 1 and tx.get_height() <= 1:
+		# Пустой кадр (Дона Анна в могиле): спрайта нет, тапаем по надгробию на фоне.
+		return Rect2(e.x - 20, e.y - lift - 62, 40, 90)
 	var left: float = a.x - (tx.get_width() - anc[0] if a.flip else anc[0]) / KX
 	return Rect2(Vector2(left, a.y - lift - anc[1]) + _actor_visual_offset(a), tx.get_size() / Vector2(KX, 1))
 

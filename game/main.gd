@@ -25,6 +25,7 @@ const SceneEffects = preload("res://scripts/scene_effects.gd")
 const GraphicsSettings = preload("res://scripts/graphics_settings.gd")
 const ActorShadows = preload("res://scripts/actor_shadows.gd")
 const AnimationTiming = preload("res://scripts/animation_timing.gd")
+const Stats = preload("res://scripts/stats.gd")
 
 var save_path := "user://progress.json"
 var settings_path := "user://settings.cfg"
@@ -78,6 +79,7 @@ var ui_avatar: TextureRect
 var ui_name: Label
 var ui_text: Label
 var ui_slots: Array = []
+var stats: Stats
 
 
 class Actor:
@@ -152,6 +154,10 @@ func _ready() -> void:
 	sound = GameAudio.new()
 	sound.settings_path = settings_path
 	add_child(sound)
+	stats = Stats.new()
+	add_child(stats)
+	stats.setup(settings_path, persistence_enabled)
+	stats.ping(0)
 	_build_ui()
 	menus = GameMenu.new()
 	menus.game = self
@@ -243,6 +249,7 @@ func _process(dt: float) -> void:
 	autosave_time += dt
 	if save_pending or autosave_time > 10:
 		save_game()
+	stats.tick(dt, souls.size())
 	status_time = maxf(0, status_time - dt)
 	hud_status.visible = status_time > 0
 
@@ -1070,6 +1077,7 @@ func pause_game() -> void:
 		return
 	menu_open = true
 	var ok := save_game()
+	stats.ping(souls.size())
 	game_layer.visible = false
 	sound.pause_voice(true)
 	menus.show_page("pause")

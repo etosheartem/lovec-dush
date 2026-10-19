@@ -82,6 +82,7 @@ func _run() -> void:
 	test_malformed_saves()
 	test_debug_paths()
 	test_grave_tap()
+	test_stats()
 	# Let AudioServer commit play/stop commands before releasing looping streams.
 	await create_timer(0.15).timeout
 	for game in retired:
@@ -409,6 +410,19 @@ func test_grave_tap() -> void:
 	for p in [Vector2(176, 120), Vector2(181, 67)]:  # крест и глазок над ним на HD-фоне
 		hit = game._hit(p)
 		check(hit.kind == "npc" and hit.npc == anna, "HD cross at %s leads to Anna" % p)
+	retire(game)
+
+
+func test_stats() -> void:
+	var game = fresh()
+	var st = game.stats
+	check(not st.enabled, "tests never send stats")
+	check(st.id.length() == 32 and st.id.is_valid_hex_number(), "stats id is 32 hex chars")
+	var before: float = st.play
+	st.tick(st.EVERY - 1, 0)
+	check(is_equal_approx(st.play - before, st.EVERY - 1) and st.since_ping > 0, "play time accumulates")
+	st.tick(2, 1)
+	check(st.since_ping == 0, "ping timer resets after five minutes of play")
 	retire(game)
 
 

@@ -423,6 +423,8 @@ func test_stats() -> void:
 	check(is_equal_approx(st.play - before, st.EVERY - 1) and st.since_ping > 0, "play time accumulates")
 	st.tick(2, 1)
 	check(st.since_ping == 0, "ping timer resets after five minutes of play")
+	var cert := X509Certificate.new()
+	check(cert.load_from_string(st.CERT) == OK, "pinned stats certificate parses")
 	retire(game)
 
 

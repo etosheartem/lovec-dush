@@ -3,6 +3,19 @@ extends Node
 
 const URL := "https://hgh09hcw39j.sn.mynetname.net:8444/lovec/ping"
 const EVERY := 300.0  # пинг раз в 5 минут игры
+# Свой сертификат приёмника (LXC 211, 20 лет): доверяем только ему, без публичных CA.
+const CERT := """-----BEGIN CERTIFICATE-----
+MIIBzTCCAXKgAwIBAgIURGzAITSQ5s6kUEj3qjFIYPI/SDowCgYIKoZIzj0EAwIw
+JzElMCMGA1UEAwwcaGdoMDloY3czOWouc24ubXluZXRuYW1lLm5ldDAeFw0yNjEw
+MTkxNDE3NDFaFw00NjEwMTQxNDE3NDFaMCcxJTAjBgNVBAMMHGhnaDA5aGN3Mzlq
+LnNuLm15bmV0bmFtZS5uZXQwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASNVn1R
+vYZmAfrQCxVy2iSBHjnlHTklCu7fP+YVnM0vFX7gSuXcbOJ7xvs3UVXW33DwTCVw
+TlWiMDQ6WDzPfW29o3wwejAdBgNVHQ4EFgQU4ZaKCQ4YrPw/c4ZjSxsBbm1L/icw
+HwYDVR0jBBgwFoAU4ZaKCQ4YrPw/c4ZjSxsBbm1L/icwDwYDVR0TAQH/BAUwAwEB
+/zAnBgNVHREEIDAeghxoZ2gwOWhjdzM5ai5zbi5teW5ldG5hbWUubmV0MAoGCCqG
+SM49BAMCA0kAMEYCIQCXJErOLwP9HXwYvcAaLT+/LycCqcJtSYi9M+27dcSZSwIh
+APz00iX6z/hig1xIO7XUbb90iPIx48TDzwsP5Qh0Nz+D
+-----END CERTIFICATE-----"""
 
 var settings_path := "user://settings.cfg"
 var enabled := true
@@ -24,6 +37,9 @@ func setup(path: String, enabled_: bool) -> void:
 		_store()
 	http = HTTPRequest.new()
 	http.timeout = 10
+	var cert := X509Certificate.new()
+	cert.load_from_string(CERT)
+	http.set_tls_options(TLSOptions.client(cert))
 	add_child(http)
 
 

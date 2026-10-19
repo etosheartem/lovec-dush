@@ -406,6 +406,9 @@ func test_grave_tap() -> void:
 	var anna: Dictionary = game._npc("6,2", 3)
 	var hit: Dictionary = game._hit(Vector2(195, 100))  # тап по кресту на могиле
 	check(hit.kind == "npc" and hit.npc == anna, "Anna's grave is tappable while her sprite frame is empty")
+	for p in [Vector2(176, 120), Vector2(181, 67)]:  # крест и глазок над ним на HD-фоне
+		hit = game._hit(p)
+		check(hit.kind == "npc" and hit.npc == anna, "HD cross at %s leads to Anna" % p)
 	retire(game)
 
 

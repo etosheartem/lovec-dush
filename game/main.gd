@@ -13,6 +13,10 @@ const STEP := 4               # шаг чёрта за тик (k.b)
 const WALK_SPEED := 0.7       # ходьба медленнее оригинала на 30%; анимация и шаги в такт
 const INV_CAP := 2            # k.c = new t(2)
 const FIDGETS := [0, 4, 4, 4, 4, 5, 4, 4, 6, 4, 4, 7]  # v.u: случайные ужимки после 5 с простоя
+# «Глазки»-подсказки (лист virtual, v.v): 0 — открыт, 1 — моргнул, 2 — пусто.
+const EYE_ANIMS := [[2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+	[0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
+const EYE_SHIFT := {"6,2/0": Vector2(-14, 17), "8,2/0": Vector2(0, 17)}  # в HD кресты ниже/левее оригинала
 const SCENE_H := 210
 const SaveStore = preload("res://scripts/save_store.gd")
 const GameAudio = preload("res://scripts/game_audio.gd")
@@ -60,6 +64,7 @@ var tick_acc := 0.0
 var ended := false
 var devil: Actor
 var hd := {}                  # assets/hd/hd.json: перерисованные листы (холст и якорь в единицах оригинала)
+var _eye_tex: Texture2D = preload("res://assets/sprites/virtual.png")  # 8× оригинала, nearest
 var KX := 1.0                 # ширина комнаты под текущий экран, без растяжения персонажей
 var cam: Camera2D
 var fade: ColorRect
@@ -642,8 +647,9 @@ func _npc_rect(e: Dictionary) -> Rect2:
 	var anc: Array = SPR[a.sheet].anchors[a.frame()]
 	var lift := 0 if e.blocker else 10
 	if tx.get_width() <= 1 and tx.get_height() <= 1:
-		# Пустой кадр (Дона Анна в могиле): спрайта нет, тапаем по надгробию на фоне.
-		return Rect2(e.x - 20, e.y - lift - 62, 40, 90)
+		# Пустой кадр (Дона Анна в могиле): спрайта нет, тапаем по кресту на фоне вместе с глазком над ним.
+		# В HD крест на 14 левее оригинала — хитбокс накрывает оба.
+		return Rect2(e.x - 34, e.y - lift - 92, 48, 120)
 	var left: float = a.x - (tx.get_width() - anc[0] if a.flip else anc[0]) / KX
 	return Rect2(Vector2(left, a.y - lift - anc[1]) + _actor_visual_offset(a), tx.get_size() / Vector2(KX, 1))
 
@@ -747,7 +753,24 @@ func _draw() -> void:
 		for e in sc.npcs:
 			if e.has("actor"):
 				_draw_actor(e.actor, ox, 0 if e.blocker else 10)
+		_draw_eyes(key, ox)
 	_draw_actor(devil, r.x * ROOM_W)
+
+
+func _draw_eyes(key: String, ox: float) -> void:
+	var tick := int(Time.get_ticks_msec() / (FRAME * 1000))
+	var npcs: Array = scenes[key].npcs
+	for i in npcs.size():
+		var e: Dictionary = npcs[i]
+		if e.sheet != "virtual":
+			continue
+		var seq: Array = EYE_ANIMS[int(e.frames[0])]
+		var fr: int = seq[tick % seq.size()]
+		if fr == 2:
+			continue
+		var at: Vector2 = Vector2(e.x, e.y - (0 if e.blocker else 10)) + EYE_SHIFT.get("%s/%d" % [key, i], Vector2.ZERO)
+		draw_set_transform(Vector2((ox + at.x) * KX, at.y) * S, 0, Vector2(S, S))
+		draw_texture_rect_region(_eye_tex, Rect2(-12, -7, 25, 16), Rect2(fr * 200, 0, 200, 128))
 
 
 func _draw_arrow(ex: Dictionary, ox: float) -> void:

@@ -1,5 +1,6 @@
 extends Node
-## Анонимный счётчик: случайный id установки, версия, суммарное время в игре, число душ, пройдена ли игра.
+## Анонимный счётчик: случайный id установки, версия игры, время в игре, души, пройдена ли игра,
+## модель устройства и версия Android (без разрешений; имя телефона не берём — это личные данные).
 
 const URL := "https://hgh09hcw39j.sn.mynetname.net:8444/lovec/ping"
 const EVERY := 300.0  # пинг раз в 5 минут игры
@@ -56,7 +57,8 @@ func ping(souls: int, finished := false) -> void:
 	if not enabled or http == null or http.get_http_client_status() != HTTPClient.STATUS_DISCONNECTED:
 		return
 	var body := JSON.stringify({id = id, v = str(ProjectSettings.get_setting("application/config/version", "0")),
-		t = int(play), s = clampi(souls, 0, 3), f = finished})
+		t = int(play), s = clampi(souls, 0, 3), f = finished,
+		m = OS.get_model_name().left(48), a = OS.get_version().left(16)})
 	http.request(URL, ["Content-Type: application/json"], HTTPClient.METHOD_POST, body)
 
 

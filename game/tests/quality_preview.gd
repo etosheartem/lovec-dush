@@ -53,7 +53,7 @@ func enter_scene(key: String) -> void:
 	game._process(0.0)
 	game.cam.force_update_scroll()
 	var background: Texture2D = game._bg(key)
-	check(background.resource_path == "res://assets/qhd/scenes/" + key.replace(",", "_") + ".png",
+	check(background.resource_path == "res://assets/hd/scenes/" + key.replace(",", "_") + ".png",
 		key + " uses the 2K asset pack")
 	check(background.get_size() == Vector2(PIXELS), key + " uses a native 2560x1440 background")
 
@@ -83,7 +83,7 @@ func start() -> void:
 	game.set_process_unhandled_input(false)
 	check(game.graphics.preset == "maximum", "maximum is the fresh default")
 	check(viewport.msaa_2d == Viewport.MSAA_4X, "maximum enables 4x smoothing on the 2K target")
-	check(game.menus.screen.get_node("MenuBackground").texture.resource_path == "res://assets/qhd/ui/menu_background.png",
+	check(game.menus.screen.get_node("MenuBackground").texture.resource_path == "res://assets/hd/ui/menu_background.png",
 		"home uses the 2K background")
 	await capture("home")
 	enter_scene("9,2")

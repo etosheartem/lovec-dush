@@ -193,7 +193,7 @@ func check_pixels(viewport: SubViewport, menu: CanvasLayer) -> void:
 	check(menu.home_effects.art_point(Vector2(128, 325)).is_equal_approx(Vector2(80, 203.125)), "half-size candles follow background resize")
 	await capture(viewport, "home_half_size")
 	# Both packs share the same composition; anchor math is independent of texture resolution.
-	menu.game.graphics.texture_root = "res://assets/qhd"
+	menu.game.graphics.texture_root = "res://assets/hd"
 	menu.show_page("home")
 	menu.set_process(false)
 	check(menu.screen.get_node("MenuBackground").texture.get_width() == 2560, "maximum pack loads real QHD menu art")

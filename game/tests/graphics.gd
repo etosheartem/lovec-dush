@@ -48,7 +48,7 @@ func start() -> void:
 func check_profiles_and_persistence() -> void:
 	var settings = fresh("quality.cfg")
 	check(settings.preset == "maximum", "new profile defaults to maximum")
-	check(settings.texture_root == "res://assets/qhd" and settings.effects_level == 2 and settings.msaa_2d == Viewport.MSAA_4X,
+	check(settings.texture_root == "res://assets/hd" and settings.effects_level == 2 and settings.msaa_2d == Viewport.MSAA_4X,
 		"maximum selects 2K assets, full effects and 4x edge smoothing")
 	check(not FileAccess.file_exists(settings.settings_path), "loading defaults does not write a settings file")
 	settings.changed.connect(func(): emissions += 1)
@@ -80,7 +80,7 @@ func check_profiles_and_persistence() -> void:
 		saved.set_value("graphics", "preset", malformed)
 		saved.save(settings.settings_path)
 		check(not restored.load_settings() and restored.preset == "maximum", "invalid stored profile defaults to maximum: %s" % malformed)
-		check(restored.texture_root == "res://assets/qhd" and restored.effects_level == 2,
+		check(restored.texture_root == "res://assets/hd" and restored.effects_level == 2,
 			"invalid stored profile cannot desynchronize assets/effects")
 	check(restored.save_settings(), "explicit save persists a normalized profile")
 	var viewport := SubViewport.new()
@@ -112,7 +112,7 @@ func check_live_game() -> void:
 	check(graphics != null, "main exposes its graphics settings")
 	if graphics != null:
 		check(graphics.preset == "maximum", "live game defaults to maximum quality")
-		check(game.menus.screen.get_node("MenuBackground").texture.resource_path == "res://assets/qhd/ui/menu_background.png",
+		check(game.menus.screen.get_node("MenuBackground").texture.resource_path == "res://assets/hd/ui/menu_background.png",
 			"home loads the actual 2K background by default")
 		var expected_geometry: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/hd/hd.json"))
 		game.new_game()
@@ -131,7 +131,7 @@ func check_live_game() -> void:
 			check(graphics.set_preset(preset_id), "live switch to " + preset_id)
 			await process_frame
 			await process_frame
-			var expected_root: String = "res://assets/qhd" if preset_id == "maximum" else "res://assets/hd"
+			var expected_root: String = "res://assets/hd"  # один набор 2К на все режимы
 			check(viewport.msaa_2d == graphics.msaa_2d, "live viewport smoothing updates for " + preset_id)
 			check(game.scene_effects.quality == graphics.effects_level and game.actor_shadows.quality == graphics.effects_level,
 				"live ambience and actor shadows apply the selected effects level for " + preset_id)
@@ -145,7 +145,7 @@ func check_live_game() -> void:
 			var background: Texture2D = game._bg("3,2")
 			check(background.resource_path == expected_root + "/scenes/3_2.png",
 				"room reloads correct asset pack for " + preset_id)
-			check(background.get_size() == (Vector2(2560, 1440) if preset_id == "maximum" else Vector2(1920, 1080)),
+			check(background.get_size() == Vector2(2560, 1440),
 				"room uses the advertised pixel dimensions for " + preset_id)
 			check(game.ui_dialog.visible and game.dialog_lines == original_lines, "quality switch preserves active dialogue for " + preset_id)
 			# A paused AudioStreamPlayer reports playing=false while retaining its playback.

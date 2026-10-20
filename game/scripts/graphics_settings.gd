@@ -1,16 +1,17 @@
 extends Node
-## Quality changes select real asset packs and rendering features, never the logical canvas size.
+## Quality changes rendering features (effects, antialiasing), never the logical canvas size.
+## Один набор картинок (2К, WebP) на все режимы — APK вдвое меньше.
 
 signal changed
 
 const DEFAULT_PRESET := "maximum"
 const PROFILES := {
 	"maximum": {
-		"label": "Максимальное · 2К", "texture_root": "res://assets/qhd",
+		"label": "Максимальное", "texture_root": "res://assets/hd",
 		"effects_level": 2, "msaa_2d": Viewport.MSAA_4X,
 	},
 	"high": {
-		"label": "Высокое · Full HD", "texture_root": "res://assets/hd",
+		"label": "Высокое", "texture_root": "res://assets/hd",
 		"effects_level": 1, "msaa_2d": Viewport.MSAA_2X,
 	},
 	"economy": {

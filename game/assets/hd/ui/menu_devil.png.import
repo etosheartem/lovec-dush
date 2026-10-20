@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmrke8yqrkeri"
+uid="uid://irsw8mv7gpdt"
 path="res://.godot/imported/menu_devil.png-34e0bb8c2cd310a01f2fa7ac71ae9d84.ctex"
 metadata={
 "vram_texture": false
@@ -15,9 +15,9 @@ dest_files=["res://.godot/imported/menu_devil.png-34e0bb8c2cd310a01f2fa7ac71ae9d
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

@@ -334,7 +334,9 @@ func _arrive(t: Dictionary) -> void:
 			devil.play(2, 0, false)
 			pending_pick = t.get("i", -1)
 		"exit":
-			if absf(devil.x - t.exit.x) <= 20:
+			# Шаг 2.8 (WALK_SPEED) не всегда доводит до края комнаты: у двери за пределами ходьбы
+			# (вход в монастырь на 9,2) считаем приходом остановку в достижимой точке.
+			if absf(devil.x - t.exit.x) <= 20 or (absf(devil.x - t.x) < STEP and absf(t.x - t.exit.x) <= 20):
 				_go(t.exit.to, t.exit.spawn)
 				follow_x = t.get("then_x", -1.0)  # тапнули в соседнюю комнату — после перехода идём туда
 
@@ -616,10 +618,12 @@ func _hit(p: Vector2) -> Dictionary:
 		if Rect2(fl[i].tx * 30 - 5, fl[i].ty * 30 - 5, 40, 40).has_point(p):
 			return {kind = "item", i = i, x = clampf(fl[i].tx * 30 + 15, lo, hi)}
 	var npcs: Array = sc.npcs
-	for pass_ in [true, false]:  # сначала видимые спрайты, потом невидимые хотспоты
+	# Сначала видимые спрайты и хотспоты с невыполненными действиями (мышиная нора 7,1 лежит
+	# в области люка), потом двери, потом прочие невидимые хотспоты.
+	for pass_ in [true, false]:
 		for i in range(npcs.size() - 1, -1, -1):
 			var e: Dictionary = npcs[i]
-			if e.has("actor") != pass_ or not _npc_rect(e).has_point(p):
+			if (e.has("actor") or _pending(e)) != pass_ or not _npc_rect(e).has_point(p):
 				continue
 			var side := -1.0 if devil.x < e.x else 1.0
 			var r: float = maxf(e.radius - 6, 0)
@@ -640,6 +644,10 @@ func _exit_rect(ex: Dictionary) -> Rect2:
 	return Rect2(ex.x - 25, ex.y - 80, 50, 100)
 
 
+func _pending(e: Dictionary) -> bool:
+	return e.interactions.any(func(a): return not a.done)
+
+
 func _npc_rect(e: Dictionary) -> Rect2:
 	if not e.has("actor"):
 		if cur_key == "9,2":
@@ -654,8 +662,10 @@ func _npc_rect(e: Dictionary) -> Rect2:
 	var anc: Array = SPR[a.sheet].anchors[a.frame()]
 	var lift := 0 if e.blocker else 10
 	if tx.get_width() <= 1 and tx.get_height() <= 1:
-		# Пустой кадр (Дона Анна в могиле): спрайта нет, тапаем по кресту на фоне вместе с глазком над ним.
-		# В HD крест на 14 левее оригинала — хитбокс накрывает оба.
+		# Пустой кадр: Дона Анна в могиле — тапаем по кресту на фоне вместе с глазком над ним
+		# (в HD крест на 14 левее оригинала). Исчезнувшие (взорванный скелет у двери 1,1) не ловят тапы.
+		if not _pending(e):
+			return Rect2()
 		return Rect2(e.x - 34, e.y - lift - 92, 48, 120)
 	var left: float = a.x - (tx.get_width() - anc[0] if a.flip else anc[0]) / KX
 	return Rect2(Vector2(left, a.y - lift - anc[1]) + _actor_visual_offset(a), tx.get_size() / Vector2(KX, 1))
@@ -780,13 +790,20 @@ func _draw_eyes(key: String, ox: float) -> void:
 		draw_texture_rect_region(_eye_tex, Rect2(-12, -7, 25, 16), Rect2(fr * 200, 0, 200, 128))
 
 
-func _draw_arrow(ex: Dictionary, ox: float) -> void:
+func _arrow(ex: Dictionary) -> Array:  # [центр, направление] стрелки двери, в координатах комнаты
 	var dir := Vector2.UP if ex.y < 150 else Vector2.DOWN if ex.y > 200 else Vector2.LEFT if ex.x < 120 else Vector2.RIGHT
 	var c := Vector2(clampf(ex.x, 8, 232), ex.y - 40 if dir.y == 0 else ex.y - 20)
 	if cur_key == "9,2" and int(ex.to[0]) in [2, 4]:
 		dir = Vector2.UP
 		var door := _exit_rect(ex)
 		c = Vector2(ex.x, door.end.y - 8)
+	return [c, dir]
+
+
+func _draw_arrow(ex: Dictionary, ox: float) -> void:
+	var arrow := _arrow(ex)
+	var c: Vector2 = arrow[0]
+	var dir: Vector2 = arrow[1]
 	var n := Vector2(-dir.y, dir.x)
 	c.x *= KX
 	draw_set_transform(Vector2(ox * KX * S, 0), 0, Vector2(S, S))

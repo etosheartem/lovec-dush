@@ -173,8 +173,11 @@ func check_entrances(width: int) -> void:
 	for index in [1, 2]:
 		var entrance: Dictionary = game.scenes["9,2"].exits[index]
 		var original_open: bool = entrance.open
+		var door_spot: Dictionary = game.scenes["9,2"].npcs[index - 1]  # хотспот на этой двери
 		for unlocked in [false, true]:
 			entrance.open = unlocked
+			for a in door_spot.interactions:  # дверь открывается только его же действием (ключ от подвала)
+				a.done = unlocked
 			for point in samples[index - 1]:
 				var click := InputEventMouseButton.new()
 				click.pressed = true
@@ -188,6 +191,8 @@ func check_entrances(width: int) -> void:
 					check(game.target.get("kind") == "npc" and game.target.get("npc", {}).get("x") == (58 if index == 1 else 210),
 						"closed entrance %d tap %s at %d" % [index, point, width])
 		entrance.open = original_open
+		for a in door_spot.interactions:
+			a.done = false
 
 
 func check_pages(width: int) -> void:

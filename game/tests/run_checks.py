@@ -14,7 +14,7 @@ def main() -> int:
                "audio_check": "AUDIO RUNTIME OK", "presentation": "PRESENTATION OK",
                "graphics": "GRAPHICS OK", "effects_check": "EFFECTS OK",
                "animation_check": "ANIMATION OK", "menu_effects_check": "MENU EFFECTS OK",
-               "font_check": "FONT OK"}
+               "font_check": "FONT OK", "playthrough": "PLAYTHROUGH OK"}
     tests = sys.argv[1:] or list(markers)
     failed = False
     for test in tests:
@@ -24,9 +24,9 @@ def main() -> int:
         command = [os.environ.get("GODOT_BIN", "godot"), "--headless", "--path", str(project),
                    "--script", f"res://tests/{test}.gd"]
         try:
-            result = subprocess.run(command, capture_output=True, text=True, timeout=90)
+            result = subprocess.run(command, capture_output=True, text=True, timeout=240)
         except subprocess.TimeoutExpired as exc:
-            print(f"FAIL {test}: timed out after 90 seconds", file=sys.stderr)
+            print(f"FAIL {test}: timed out after 240 seconds", file=sys.stderr)
             for output in (exc.stdout, exc.stderr):
                 if output:
                     print(output.decode(errors="replace") if isinstance(output, bytes) else output)

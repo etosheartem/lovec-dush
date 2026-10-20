@@ -83,6 +83,7 @@ func _run() -> void:
 	test_debug_paths()
 	test_grave_tap()
 	test_stats()
+	test_update_offer()
 	# Let AudioServer commit play/stop commands before releasing looping streams.
 	await create_timer(0.15).timeout
 	for game in retired:
@@ -425,6 +426,23 @@ func test_stats() -> void:
 	check(st.since_ping == 0, "ping timer resets after five minutes of play")
 	var cert := X509Certificate.new()
 	check(cert.load_from_string(st.CERT) == OK, "pinned stats certificate parses")
+	retire(game)
+
+
+func test_update_offer() -> void:
+	var game = fresh()
+	var menus = game.menus
+	check(menus.newer("0.17", "0.16") and menus.newer("0.10", "0.9") and menus.newer("1.0", "0.16"), "newer versions win")
+	check(not menus.newer("0.16", "0.16") and not menus.newer("0.9", "0.16"), "same or older versions do not")
+	menus.offer_update("v" + str(ProjectSettings.get_setting("application/config/version")), "https://example/")
+	check(menus.update.is_empty(), "current release is not offered")
+	game.show_home()
+	menus.offer_update("v99.0", "https://github.com/etosheartem/lovec-dush/releases/tag/v99.0")
+	check(menus.page == "update", "newer release is offered on the home screen")
+	menus.back()
+	check(menus.page == "home", "later returns to the home screen")
+	game.show_home()
+	check(menus.page == "home", "update is offered once per launch")
 	retire(game)
 
 

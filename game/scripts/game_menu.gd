@@ -4,6 +4,7 @@ extends CanvasLayer
 const ArtTheme = preload("res://scripts/art_theme.gd")
 const MenuEffects = preload("res://scripts/menu_effects.gd")
 const REPO_URL := "https://github.com/etosheartem/lovec-dush"
+const LATEST_API := "https://api.github.com/repos/etosheartem/lovec-dush/releases/latest"
 
 var game
 var screen: Control
@@ -15,6 +16,8 @@ var panel: PanelContainer
 var home_effects: Control
 var _application_suspended := false
 var _focus_lost := false
+var update := {}              # {version, url} — вышла версия новее установленной
+var _update_shown := false
 
 
 func _ready() -> void:
@@ -204,6 +207,9 @@ func _button(text: String, action: Callable, disabled := false) -> Button:
 
 
 func show_page(next_page: String) -> void:
+	if next_page == "home" and not update.is_empty() and not _update_shown:
+		_update_shown = true  # предлагаем один раз за запуск
+		next_page = "update"
 	if next_page in ["settings", "credits", "help", "confirm_new"] and page in ["home", "pause"]:
 		back_page = page
 	page = next_page
@@ -277,6 +283,12 @@ func show_page(next_page: String) -> void:
 			_base("Как играть")
 			_text("Найди три души, выполняя поручения обитателей монастыря.\n\nНажми на землю, чтобы идти. Нажми на персонажа или предмет, чтобы подойти и взаимодействовать. Стрелки обозначают переходы.\n\nВ карманах помещаются два предмета. Нажми на предмет справа, чтобы прочитать описание. «Положить» под слотом оставляет его на земле.\n\nНажатие на экран листает диалог. ☰ или «Назад» открывает паузу. Игра сохраняется автоматически.", 27)
 			_button("Назад", back)
+		"update":
+			_base("Обновление")
+			_text("Вышла версия %s, у тебя %s.\n\nСкачай новую версию с GitHub и установи поверх — сохранения останутся." \
+				% [update.version, ProjectSettings.get_setting("application/config/version", "?")]).horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			_button("Скачать обновление", func(): OS.shell_open(update.url))
+			_button("Позже", func(): show_page("home"))
 		"confirm_new":
 			_base("Новая игра")
 			_text("Начать сначала? Текущее сохранение будет заменено.")
@@ -324,6 +336,8 @@ func _volume(key: String, title: String) -> void:
 func back() -> void:
 	if page == "graphics":
 		show_page("settings")
+	elif page == "update":
+		show_page("home")
 	elif page in ["settings", "credits", "help", "confirm_new"]:
 		show_page(back_page)
 	elif page == "pause":
@@ -338,3 +352,39 @@ func message(text: String) -> void:
 		status.add_theme_color_override("font_color", ArtTheme.BRASS)
 	else:
 		status.text = text
+
+
+# ---------- проверка обновлений ----------
+
+func check_updates() -> void:
+	var http := HTTPRequest.new()
+	http.timeout = 15
+	add_child(http)
+	http.request_completed.connect(func(result, code, _headers, body):
+		http.queue_free()
+		if result != HTTPRequest.RESULT_SUCCESS or code != 200:
+			return  # нет сети или GitHub недоступен — молча играем дальше
+		var data = JSON.parse_string(body.get_string_from_utf8())
+		if data is Dictionary and data.get("tag_name") is String and data.get("html_url") is String:
+			offer_update(data.tag_name, data.html_url))
+	http.request(LATEST_API, ["User-Agent: lovec-dush", "Accept: application/vnd.github+json"])
+
+
+func offer_update(tag: String, url: String) -> void:
+	var latest := tag.trim_prefix("v")
+	if not newer(latest, str(ProjectSettings.get_setting("application/config/version", "0"))):
+		return
+	update = {version = latest, url = url}
+	if visible and page == "home":
+		show_page("home")
+
+
+static func newer(a: String, b: String) -> bool:  # "0.17" > "0.16", "0.10" > "0.9"
+	var x := a.split(".")
+	var y := b.split(".")
+	for i in maxi(x.size(), y.size()):
+		var p := int(x[i]) if i < x.size() else 0
+		var q := int(y[i]) if i < y.size() else 0
+		if p != q:
+			return p > q
+	return false

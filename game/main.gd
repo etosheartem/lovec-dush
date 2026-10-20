@@ -162,6 +162,8 @@ func _ready() -> void:
 	menus = GameMenu.new()
 	menus.game = self
 	add_child(menus)
+	if persistence_enabled:
+		menus.check_updates()
 	get_tree().auto_accept_quit = false
 	get_tree().quit_on_go_back = false
 	_apply_graphics()

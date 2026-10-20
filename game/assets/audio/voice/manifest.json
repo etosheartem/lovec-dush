@@ -1503,54 +1503,6 @@
     "voice": "harry",
     "direction": "[indignantly]"
   },
-  "52a93837f39beb767b2a0aad6f23be54ba340d14e053f38e0373a33f756ee0f4": {
-    "file": "52a93837f39beb767b2a0aad6f23be54ba340d14e053f38e0373a33f756ee0f4_728a190f4991.mp3",
-    "speaker": "Секретарь",
-    "text": "Ай! Жжётся! ...Так-с. Печать на месте, подпись неразборчива — всё по форме. Проходите на ковёр. Его Темнейшество вас ждёт. Давно ждёт.",
-    "model": "elevenlabs/eleven-v4",
-    "voice": "river",
-    "direction": "[pompously] [fussily]"
-  },
-  "5a9fd581a4e2e414c90ec9d50a568fb3f524ff112615e7d76cb9987c7bedb211": {
-    "file": "5a9fd581a4e2e414c90ec9d50a568fb3f524ff112615e7d76cb9987c7bedb211_2c2dd22f3ca6.mp3",
-    "speaker": "Секретарь",
-    "text": "Бумажка, рогатый, — она и в аду бумажка. Без талона на ковёр не ступишь.",
-    "model": "elevenlabs/eleven-v4",
-    "voice": "river",
-    "direction": "[pompously] [fussily]"
-  },
-  "17aa05c25fc32f0aeb9e7a38654d5c7eb090f511e41fc666355a6a9147324a46": {
-    "file": "17aa05c25fc32f0aeb9e7a38654d5c7eb090f511e41fc666355a6a9147324a46_4e91f46c0ad5.mp3",
-    "speaker": "Секретарь",
-    "text": "Вызвали — не значит пустили. Талон есть? Нет талона — нет приёма. Талоны выдаёт кочегар. Следующий!",
-    "model": "elevenlabs/eleven-v4",
-    "voice": "river",
-    "direction": "[pompously] [fussily]"
-  },
-  "75864395642ffd02f73b5e026bc32b67b077c3000614b088bb9ea257f8980519": {
-    "file": "75864395642ffd02f73b5e026bc32b67b077c3000614b088bb9ea257f8980519_6cf39c7d5266.mp3",
-    "speaker": "Секретарь",
-    "text": "Не мешайте работать. У меня грешники по алфавиту не разложены.",
-    "model": "elevenlabs/eleven-v4",
-    "voice": "river",
-    "direction": "[pompously] [fussily]"
-  },
-  "aaf08ddf263e695de5f481aceeddbfbd7956995897efbcdf096ad16f28573626": {
-    "file": "aaf08ddf263e695de5f481aceeddbfbd7956995897efbcdf096ad16f28573626_75d086a40495.mp3",
-    "speaker": "Секретарь",
-    "text": "Проходите, проходите. Не задерживайте очередь.",
-    "model": "elevenlabs/eleven-v4",
-    "voice": "river",
-    "direction": "[pompously] [fussily]"
-  },
-  "6b3ee2883e6152819e55e6cc3082abc528e31fe77966ad697381b820d822af93": {
-    "file": "6b3ee2883e6152819e55e6cc3082abc528e31fe77966ad697381b820d822af93_cc46dab1297e.mp3",
-    "speaker": "Секретарь",
-    "text": "Стоять! Приёмная Его Темнейшества. Вы записаны?",
-    "model": "elevenlabs/eleven-v4",
-    "voice": "river",
-    "direction": "[pompously] [fussily]"
-  },
   "61a0ebb023210e51f939bc6c3e432fb0f7475a2b94499de9e7b53f77f498883f": {
     "file": "61a0ebb023210e51f939bc6c3e432fb0f7475a2b94499de9e7b53f77f498883f_c11ba2b73508.mp3",
     "speaker": "Черт",
@@ -1654,5 +1606,59 @@
     "model": "elevenlabs/eleven-v4",
     "voice": "charlie",
     "direction": "[playfully]"
+  },
+  "52a93837f39beb767b2a0aad6f23be54ba340d14e053f38e0373a33f756ee0f4": {
+    "file": "52a93837f39beb767b2a0aad6f23be54ba340d14e053f38e0373a33f756ee0f4_64f4547a6dc0.mp3",
+    "speaker": "Секретарь",
+    "text": "Ай! Жжётся! ...Так-с. Печать на месте, подпись неразборчива — всё по форме. Проходите на ковёр. Его Темнейшество вас ждёт. Давно ждёт.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "VR6AewLTigWG4xSOukaG",
+    "voice_name": "arnold",
+    "direction": "[pompously] [fussily]"
+  },
+  "5a9fd581a4e2e414c90ec9d50a568fb3f524ff112615e7d76cb9987c7bedb211": {
+    "file": "5a9fd581a4e2e414c90ec9d50a568fb3f524ff112615e7d76cb9987c7bedb211_7e8663ca6f63.mp3",
+    "speaker": "Секретарь",
+    "text": "Бумажка, рогатый, — она и в аду бумажка. Без талона на ковёр не ступишь.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "VR6AewLTigWG4xSOukaG",
+    "voice_name": "arnold",
+    "direction": "[pompously] [fussily]"
+  },
+  "17aa05c25fc32f0aeb9e7a38654d5c7eb090f511e41fc666355a6a9147324a46": {
+    "file": "17aa05c25fc32f0aeb9e7a38654d5c7eb090f511e41fc666355a6a9147324a46_6d87f075c68a.mp3",
+    "speaker": "Секретарь",
+    "text": "Вызвали — не значит пустили. Талон есть? Нет талона — нет приёма. Талоны выдаёт кочегар. Следующий!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "VR6AewLTigWG4xSOukaG",
+    "voice_name": "arnold",
+    "direction": "[pompously] [fussily]"
+  },
+  "75864395642ffd02f73b5e026bc32b67b077c3000614b088bb9ea257f8980519": {
+    "file": "75864395642ffd02f73b5e026bc32b67b077c3000614b088bb9ea257f8980519_3a0bf7d8d342.mp3",
+    "speaker": "Секретарь",
+    "text": "Не мешайте работать. У меня грешники по алфавиту не разложены.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "VR6AewLTigWG4xSOukaG",
+    "voice_name": "arnold",
+    "direction": "[pompously] [fussily]"
+  },
+  "aaf08ddf263e695de5f481aceeddbfbd7956995897efbcdf096ad16f28573626": {
+    "file": "aaf08ddf263e695de5f481aceeddbfbd7956995897efbcdf096ad16f28573626_310b5d4b7f73.mp3",
+    "speaker": "Секретарь",
+    "text": "Проходите, проходите. Не задерживайте очередь.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "VR6AewLTigWG4xSOukaG",
+    "voice_name": "arnold",
+    "direction": "[pompously] [fussily]"
+  },
+  "6b3ee2883e6152819e55e6cc3082abc528e31fe77966ad697381b820d822af93": {
+    "file": "6b3ee2883e6152819e55e6cc3082abc528e31fe77966ad697381b820d822af93_8ad4cd317e1d.mp3",
+    "speaker": "Секретарь",
+    "text": "Стоять! Приёмная Его Темнейшества. Вы записаны?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "VR6AewLTigWG4xSOukaG",
+    "voice_name": "arnold",
+    "direction": "[pompously] [fussily]"
   }
 }

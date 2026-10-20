@@ -38,8 +38,10 @@ const LIGHTS := {
 	"7,2": [[518, 227, 165, 185, 0.11]],
 	"8,2": [[779, 347, 150, 175, 0.10], [1744, 347, 150, 175, 0.10]],
 	"9,2": [[900, 200, 155, 175, 0.11]],
-	"0,3": [[1146, 506, 200, 190, 0.12], [386, 689, 260, 120, 0.11]],  # ад: печь, огонь под котлом
-	"1,3": [[800, 211, 150, 170, 0.10], [1257, 211, 150, 170, 0.10], [1907, 200, 120, 160, 0.09]],  # факелы
+	"0,3": [[1146, 506, 200, 190, 0.12], [386, 689, 260, 120, 0.11],  # ад: печь, огонь под котлом,
+		[850, 300, 260, 220, 0.09, Color(1.0, 0.16, 0.04)], [1580, 260, 220, 200, 0.08, Color(1.0, 0.16, 0.04)]],  # лава в трещинах
+	"1,3": [[800, 211, 150, 170, 0.10], [1257, 211, 150, 170, 0.10], [1907, 200, 120, 160, 0.09],  # факелы,
+		[1395, 330, 160, 260, 0.09, Color(1.0, 0.16, 0.04)]],  # лавовая жила у трона
 }
 
 var elapsed := 0.0
@@ -54,6 +56,13 @@ var _fire_material: ShaderMaterial
 var _haze: ColorRect
 var _haze_material: ShaderMaterial
 var _souls := PackedVector2Array()
+# Живые очаги комнат ада: [вид, x, y основания (HD 1920x1080), ширина, высота].
+const SPOTS := {
+	"0,3": [["fire", 300, 752, 170, 150], ["fire", 400, 760, 190, 170], ["fire", 505, 752, 170, 150],
+		["fire", 1146, 584, 170, 150], ["smoke", 386, 470, 380, 360, 7.0, Color(0.80, 0.76, 0.74)]],
+	"1,3": [["fire", 800, 246, 70, 110], ["fire", 1257, 246, 70, 110], ["fire", 1907, 232, 60, 100]],
+}
+var _spots: Array = []         # [ColorRect, ShaderMaterial, описание]
 
 
 func configure(key: String, world_origin: Vector2, pixel_scale: float, kx: float) -> void:
@@ -69,6 +78,7 @@ func configure(key: String, world_origin: Vector2, pixel_scale: float, kx: float
 	_fire.position = Vector2(400, 970) * _coordinate_scale + Vector2(-105, -180) * _radius_scale
 	_fire.size = Vector2(210, 180) * _radius_scale
 	_fire_material.set_shader_parameter("phase", elapsed)
+	_place_spots()
 	_update_quality()
 	queue_redraw()
 
@@ -85,7 +95,32 @@ func set_souls(world_centers: PackedVector2Array) -> void:
 	queue_redraw()
 
 
+func _place_spots() -> void:
+	var wanted: Array = SPOTS.get(room_key, [])
+	for i in _spots.size():
+		var rect: ColorRect = _spots[i][0]
+		var mat: ShaderMaterial = _spots[i][1]
+		if i >= wanted.size():
+			rect.visible = false
+			continue
+		var d: Array = wanted[i]
+		_spots[i][2] = d
+		mat.shader = FIRE_SHADER if d[0] == "fire" else HAZE_SHADER
+		if d[0] == "smoke":
+			mat.set_shader_parameter("smoke", true)
+			mat.set_shader_parameter("strength", d[5] if d.size() > 5 else 1.0)
+			var tint: Color = d[6] if d.size() > 6 else Color(0.33, 0.32, 0.30)
+			mat.set_shader_parameter("smoke_tint", Vector3(tint.r, tint.g, tint.b))
+		mat.set_shader_parameter("phase", elapsed + float(i) * 3.7)  # очаги не в такт
+		rect.position = Vector2(d[1], d[2]) * _coordinate_scale + Vector2(-d[3] * 0.5, -d[4]) * _radius_scale
+		rect.size = Vector2(d[3], d[4]) * _radius_scale
+
+
 func _update_quality() -> void:
+	for spot in _spots:
+		var d: Array = spot[2]
+		spot[0].visible = not d.is_empty() and SPOTS.get(room_key, []).has(d) \
+			and (quality > 0 if d[0] == "fire" else quality == 2)
 	_fire.visible = quality > 0 and room_key == "3,2"
 	_haze.visible = quality == 2 and room_key in ["3,2", "6,2", "7,2", "8,2"]
 	var smoke := room_key == "3,2"
@@ -107,6 +142,9 @@ func advance(dt: float) -> void:
 		_fire_material.set_shader_parameter("phase", elapsed)
 	if _haze_material != null and _haze.visible:
 		_haze_material.set_shader_parameter("phase", elapsed)
+	for i in _spots.size():
+		if _spots[i][0].visible:
+			_spots[i][1].set_shader_parameter("phase", elapsed + float(i) * 3.7)
 	if not _lights.is_empty() or not _souls.is_empty():
 		queue_redraw()
 
@@ -141,6 +179,17 @@ func _create_resources() -> void:
 	_haze.material = _haze_material
 	_haze.visible = false
 	add_child(_haze)
+	var most := 0
+	for key in SPOTS:
+		most = maxi(most, SPOTS[key].size())
+	for i in most:  # пул на всю игру: смена комнаты не создаёт узлов
+		var rect := ColorRect.new()
+		rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		rect.visible = false
+		var mat := ShaderMaterial.new()
+		rect.material = mat
+		add_child(rect)
+		_spots.append([rect, mat, []])
 
 
 func _draw() -> void:
@@ -157,6 +206,9 @@ func _draw() -> void:
 		var tint := Color(1.0, 0.54, 0.17, float(light[4]) * flicker)
 		if (room_key == "3,2" and i == 1) or (room_key == "9,0" and i == 2):
 			tint = Color(1.0, 0.28, 0.055, tint.a)
+		if light.size() > 5:  # свой цвет; лава дышит медленно и глубже
+			var lava := 1.0 + 0.35 * sin(elapsed * 0.6 + seed)
+			tint = Color(light[5].r, light[5].g, light[5].b, float(light[4]) * lava)
 		draw_texture_rect(_glow, Rect2(center - radius, radius * 2.0), false, tint)
 		if quality == 2 and room_key.get_slice(",", 1) != "2":
 			_draw_motes(center, radius.x, seed)

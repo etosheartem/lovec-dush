@@ -70,7 +70,7 @@ func check_contracts() -> void:
 	root.add_child(fx)
 	for key in SceneEffects.LIGHTS:
 		fx.configure(key, Vector2.ZERO, SCALE, KX)
-		check(fx.get_child_count() == 2, "room switch reuses fire and haze nodes: " + key)
+		check(fx.get_child_count() == 2 + fx._spots.size(), "room switch reuses fire, haze and spot nodes: " + key)
 		for level in 3:
 			fx.set_quality(level)
 			check(fx._fire.visible == (level > 0 and key == "3,2"), "fire profile: %s/%d" % [key, level])

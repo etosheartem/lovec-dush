@@ -4,6 +4,8 @@ render_mode unshaded, blend_mix;
 // Local translucent wisps only: no screen texture, refraction or background blur.
 uniform float phase = 0.0;
 uniform bool smoke = true;
+uniform float strength = 1.0;                        // ад: пар над котлом гуще и светлее
+uniform vec3 smoke_tint = vec3(0.33, 0.32, 0.30);
 
 float hash21(vec2 p) {
 	return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
@@ -30,8 +32,8 @@ void fragment() {
 		cloud = mix(cloud, noise(vec2(p.x * 11.0, p.y * 10.0 + phase * 0.21)), 0.25);
 		density = smoothstep(0.28, 0.79, cloud) * edge;
 		density *= smoothstep(0.0, 0.17, rise) * (1.0 - smoothstep(0.60, 1.0, rise));
-		density *= 0.068;
-		tint = vec3(0.33, 0.32, 0.30);
+		density *= 0.068 * strength;
+		tint = smoke_tint;
 	} else {
 		float broad = noise(vec2(p.x * 5.0 - phase * 0.022, p.y * 2.8 + phase * 0.013));
 		float detail = noise(vec2(p.x * 12.0 + phase * 0.014, p.y * 5.0));

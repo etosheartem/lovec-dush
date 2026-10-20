@@ -588,7 +588,7 @@ func _run_event(n: int) -> void:
 		27:
 			scenes["9,2"].exits[1].open = true
 		28:  # ад: чёрт вспыхивает и оказывается в пекле
-			_go([0, 3], [120, 182])
+			_go([0, 3], [150, 182])
 			sound.effect("burn")
 			devil.play(10, 0, false)
 			target = {}

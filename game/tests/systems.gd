@@ -426,6 +426,9 @@ func test_stats() -> void:
 	check(st.since_ping == 0, "ping timer resets after five minutes of play")
 	var cert := X509Certificate.new()
 	check(cert.load_from_string(st.CERT) == OK, "pinned stats certificate parses")
+	st.since_ping = 100.0
+	game._soul("e")
+	check(st.since_ping == 0, "a new soul is reported right away")
 	retire(game)
 
 

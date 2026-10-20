@@ -469,6 +469,7 @@ func _line(text_id: int, speaker := -1, avatar := 3) -> Dictionary:
 
 func _soul(s: String) -> void:  # u.d(): все три души — финал
 	souls[s] = true
+	stats.ping(souls.size())  # сразу: до финала может не случиться ни паузы, ни 5 минут игры
 	sound.effect("soul")
 	if souls.size() == 3:
 		ev = 26
@@ -1057,6 +1058,7 @@ func _advance_dialog() -> void:
 	if ended:
 		save_game()
 		in_game = false
+		stats.ping(souls.size(), true)
 		show_home()
 		menus.show_page("sequel")
 

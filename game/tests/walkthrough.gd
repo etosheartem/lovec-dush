@@ -69,6 +69,11 @@ func run() -> void:
 	use("9,1", 1)                                            # Послушник
 	if not check(m.souls.size() == 3):
 		return
+	settle()                                                 # концовка оригинала -> ад
+	if not check(m.cur_key == "0,3", "после трёх душ чёрт не попал в ад"):
+		return
+	take("1,3", 32); use("0,3", 1)                           # кочерга кочегару -> талон
+	use("1,3", 0); use("1,3", 1)                             # талон секретарю, ковёр у Люцифера
 	for i in 10:
 		m._process(0.05)
 	if not check(m.ended, "финал не запустился"):

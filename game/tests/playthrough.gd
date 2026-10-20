@@ -67,12 +67,17 @@ func run() -> void:
 		["take", "1,2", 31], ["use", "9,1", 0],                         # деталь роботу
 		["take", "6,1", 24], ["use", "0,0", 1],                         # верёвка -> ключ на 12
 		["take", "0,0", 28], ["use", "9,1", 0], ["use", "9,1", 1],      # робот -> Послушник
+		["talk", "0,3", 0], ["talk", "0,3", 1], ["talk", "1,3", 0],     # ад: паладин, кочегар, секретарь
+		["take", "1,3", 32], ["use", "0,3", 1],                         # кочерга -> талон
+		["use", "1,3", 0], ["use", "1,3", 1],                           # талон -> ковёр у Люцифера
 	]
 	for s in steps:
 		if failed:
 			return
 		if s[0] == "take":
 			take(s[1], s[2])
+		elif s[0] == "talk":
+			talk(s[1], s[2])
 		else:
 			use(s[1], s[2])
 	if not failed:
@@ -212,3 +217,21 @@ func use(key: String, i: int) -> void:
 		after += int(a.done)
 	check(after > before or m.souls.size() > souls_before,
 		"%s#%d (%s): тап не сработал (цель тапа — %s), в руках %s" % [key, i, e.name, "он" if hit_npc else "другое", m.inv])
+
+
+func talk(key: String, i: int) -> void:  # персонаж только разговаривает: тап должен открыть диалог
+	if not goto(key):
+		return
+	var e: Dictionary = m._npc(key, i)
+	tap(center(m._npc_rect(e)))
+	var spoke := false
+	for step in 2400:
+		if m.dialog_lines.size() > 0:
+			spoke = true
+			break
+		m._process(0.05)
+		if m.target.is_empty() and m.devil.free:
+			spoke = m.dialog_lines.size() > 0
+			break
+	check(spoke, "%s#%d (%s): тап не открыл разговор" % [key, i, e.name])
+	idle()

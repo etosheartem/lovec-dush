@@ -2,7 +2,7 @@ extends RefCounted
 ## Versioned, JSON-only saves. Restore references after rebuilding the original world.
 
 const VERSION := 1
-const AVATAR_COUNT := 10 # Original portrait frames assets/sprites/avatars/0..9.png.
+const AVATAR_COUNT := 14 # Портреты 0..9 оригинала + 10..13 ада.
 const FIELDS := ["cur_key", "inv", "souls", "burn_msg", "ev", "ev_wait", "saved",
 	"pending_pick", "drop_slot", "idle_time", "tick_acc", "ended", "follow_x", "dialog_lines"]
 const NPC_FIELDS := ["x", "y", "extent", "radius", "flip", "blocker", "p", "frames", "free_dialogs"]
@@ -100,8 +100,8 @@ static func _dialogs_valid(dialogs, game) -> bool:
 static func valid(data, game) -> bool:
 	if not data is Dictionary or data.get("version") != VERSION or not data.has_all(FIELDS):
 		return false
-	if not data.cur_key is String or not game.G.scenes.has(data.cur_key) \
-		or not data.get("rooms") is Dictionary or data.rooms.size() != game.G.scenes.size() \
+	if not data.cur_key is String or not game.G.scenes.has(data.cur_key) or not data.get("rooms", {}).has(data.cur_key) \
+		or not data.get("rooms") is Dictionary or not data.rooms.keys().all(func(k): return game.G.scenes.has(k)) \
 		or not _actor_valid(data.get("devil"), game.SPR.devil.anims):
 		return false
 	if not data.inv is Array or data.inv.size() > game.INV_CAP or not data.souls is Dictionary:
@@ -112,7 +112,7 @@ static func valid(data, game) -> bool:
 	for soul in data.souls:
 		if soul not in ["d", "e", "f"] or data.souls[soul] != true:
 			return false
-	if not _integer(data.ev, -1, 27) or not _integer(data.ev_wait, 0, 1000) \
+	if not _integer(data.ev, -1, 31) or not _integer(data.ev_wait, 0, 1000) \
 		or not _integer(data.burn_msg, 44, 46) or not data.ended is bool \
 		or not _integer(data.drop_slot, -1, 1) or not _number(data.follow_x) \
 		or not _number(data.idle_time) or not _number(data.tick_acc) \
@@ -130,6 +130,8 @@ static func valid(data, game) -> bool:
 	for key in game.G.scenes:
 		var original: Dictionary = game.G.scenes[key]
 		var room = data.rooms.get(key)
+		if room == null and original.get("added", false):
+			continue  # комната добавлена позже сейва (ад) — остаётся в начальном состоянии
 		if not room is Dictionary or not room.get("floor_items") is Array \
 			or not room.get("exits") is Array or room.exits.size() != original.exits.size() \
 			or not room.get("npcs") is Array or room.npcs.size() != original.npcs.size():

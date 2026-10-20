@@ -16,7 +16,8 @@ const FIDGETS := [0, 4, 4, 4, 4, 5, 4, 4, 6, 4, 4, 7]  # v.u: случайные
 # «Глазки»-подсказки (лист virtual, v.v): 0 — открыт, 1 — моргнул, 2 — пусто.
 const EYE_ANIMS := [[2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
-const EYE_SHIFT := {"6,2/0": Vector2(-14, 17), "8,2/0": Vector2(0, 17)}  # в HD кресты ниже/левее оригинала
+const EYE_SHIFT := {"6,2/0": Vector2(-14, 17), "8,2/0": Vector2(0, 17),  # в HD кресты ниже/левее оригинала
+	"0,3/0": Vector2(0, -40)}  # ад: глазок над шлемом паладина в котле
 const SCENE_H := 210
 const SaveStore = preload("res://scripts/save_store.gd")
 const GameAudio = preload("res://scripts/game_audio.gd")
@@ -49,6 +50,7 @@ var quitting := false
 
 var G: Dictionary
 var SPR: Dictionary
+var HELL: Dictionary         # assets/hell.json: реплики рассказчика и чёрта в эпилоге
 var tex_cache := {}
 var scenes := {}
 var cur_key := "3,2"
@@ -138,6 +140,11 @@ class Actor:
 
 func _ready() -> void:
 	G = JSON.parse_string(FileAccess.get_file_as_string("res://assets/game.json"))
+	# Эпилог в аду — своё дополнение поверх оригинала: комнаты 0,3 и 1,3, предметы 32-33.
+	var hell: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/hell.json"))
+	G.items.append_array(hell.items)
+	G.scenes.merge(hell.scenes)
+	HELL = hell.lines
 	SPR = JSON.parse_string(FileAccess.get_file_as_string("res://assets/sprites/sprites.json"))
 	_reset_world()
 	graphics = GraphicsSettings.new()
@@ -156,7 +163,7 @@ func _ready() -> void:
 	add_child(sound)
 	stats = Stats.new()
 	add_child(stats)
-	stats.setup(settings_path, persistence_enabled)
+	stats.setup(settings_path, persistence_enabled and not OS.has_feature("hell_test"))  # тест ада не считаем
 	stats.ping(0)
 	_build_ui()
 	menus = GameMenu.new()
@@ -574,11 +581,25 @@ func _run_event(n: int) -> void:
 			_say({lines = [_line(42, 33, 5)]})
 			ev = 0
 			ev_wait = 1
-		26:
-			_say({lines = [_line(114), _line(43, 33, 5)]})
-			ended = true
+		26:  # оригинальная концовка, а рассказчик обещанный «ковёр» не откладывает
+			_say({lines = [_line(114), _line(43, 33, 5), {speaker = G.strings[33], avatar = 5, text = HELL.hook}]})
+			ev = 28
+			ev_wait = 1
 		27:
 			scenes["9,2"].exits[1].open = true
+		28:  # ад: чёрт вспыхивает и оказывается в пекле
+			_go([0, 3], [120, 182])
+			sound.effect("burn")
+			devil.play(10, 0, false)
+			target = {}
+			_say({lines = [{speaker = G.strings[39], avatar = 3, text = HELL.arrive}]})
+		30:  # секретарь отходит к столу и пропускает на ковёр
+			var e := _npc("1,3", 0)
+			e.x = 95
+			e.actor.x = 95
+		31:  # разговор с Люцифером окончен — финал
+			_say({lines = [{speaker = G.strings[33], avatar = 5, text = HELL.end}]})
+			ended = true
 
 
 # ---------- ввод ----------
@@ -1048,6 +1069,10 @@ func has_save() -> bool:
 
 func new_game() -> void:
 	_reset_world()
+	if OS.has_feature("hell_test"):  # тестовая сборка «только ад»: три души уже собраны
+		souls = {d = true, e = true, f = true}
+		ev = 28
+		ev_wait = 0
 	in_game = true
 	ui_dialog.hide()
 	sound.stop_voice()

@@ -109,7 +109,7 @@ func location(room: String, in_menu := false) -> void:
 		context = next_context
 		_loop(music, "music_" + context)
 		_loop(ambience, "ambient_street" if outside else "ambient_monastery")
-	if not in_menu and room == "3,2":
+	if not in_menu and (room == "3,2" or room.ends_with(",3")):  # костёр и пекло ада
 		if not fire.playing:
 			_loop(fire, "ambient_fire")
 	else:

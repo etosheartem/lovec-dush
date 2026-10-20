@@ -289,6 +289,10 @@ func show_page(next_page: String) -> void:
 				% [update.version, ProjectSettings.get_setting("application/config/version", "?")]).horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 			_button("Скачать обновление", func(): OS.shell_open(update.url))
 			_button("Позже", func(): show_page("home"))
+		"sequel":
+			_base("Продолжение следует…")
+			_text("Отпуск чёрту так и не дали: Люцифер отправил его на новое задание.\n\nЧто было дальше — узнаешь в следующих версиях игры. Она сама сообщит, когда они выйдут.").horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			_button("В главное меню", func(): show_page("home"))
 		"confirm_new":
 			_base("Новая игра")
 			_text("Начать сначала? Текущее сохранение будет заменено.")
@@ -336,7 +340,7 @@ func _volume(key: String, title: String) -> void:
 func back() -> void:
 	if page == "graphics":
 		show_page("settings")
-	elif page == "update":
+	elif page in ["update", "sequel"]:
 		show_page("home")
 	elif page in ["settings", "credits", "help", "confirm_new"]:
 		show_page(back_page)

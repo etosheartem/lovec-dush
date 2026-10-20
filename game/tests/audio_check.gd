@@ -23,7 +23,7 @@ func start() -> void:
 	sound.settings_path = settings_path
 	root.add_child(sound)
 	sound.set_process(false)
-	check(sound.manifest.size() == 171, "Full cast manifest must load")
+	check(sound.manifest.size() == 207, "Full cast manifest must load")  # 171 оригинал + 36 ад
 	check(sound.settings == {"music": 0.5, "effects": 0.7, "voice": 1.0}, "Default levels")
 	var music_bus := AudioServer.get_bus_index("Music")
 	var voice_bus := AudioServer.get_bus_index("Voice")

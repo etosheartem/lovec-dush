@@ -1058,7 +1058,7 @@ func _advance_dialog() -> void:
 		save_game()
 		in_game = false
 		show_home()
-		menus.message("Три души собраны. Сделка исполнена!")
+		menus.show_page("sequel")
 
 
 # ---------- меню, сохранения и жизненный цикл Android ----------

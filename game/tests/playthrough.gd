@@ -84,6 +84,7 @@ func run() -> void:
 		idle()
 	if not check(m.souls.size() == 3 and m.ended, "финал не наступил: души %s" % [m.souls.keys()]):
 		return
+	check(m.menus.page == "sequel", "после финала нет окна «Продолжение следует»: %s" % m.menus.page)
 	var doors := all_doors()
 	if not failed:
 		print("PLAYTHROUGH OK: %d тапов, %d мин игрового времени, дверей проверено %d" % [taps, int(m.stats.play / 60), doors])

@@ -1366,5 +1366,293 @@
     "model": "elevenlabs/eleven-v4",
     "voice": "charlie",
     "direction": "[playfully]"
+  },
+  "7345e2f6b98716120106e36598010e2928510b35329ee76f999a92a76b14bbcd": {
+    "file": "7345e2f6b98716120106e36598010e2928510b35329ee76f999a92a76b14bbcd_8e629b95f4c9.mp3",
+    "speaker": "Алхимик",
+    "text": "Обещал я продолжить позже — а чего тянуть? Ковёр уже расстелен, и черта ждут. Спустимся-ка следом да поглядим, как в аду встречают героев.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "4fa1a4e27e46e9de0b07e0b32b8624b3526cf4e57bdffdb8dac40584996e57df": {
+    "file": "4fa1a4e27e46e9de0b07e0b32b8624b3526cf4e57bdffdb8dac40584996e57df_dfadc4d76dc6.mp3",
+    "speaker": "Алхимик",
+    "text": "Так и вернулся черт на работу, не успев из неё уйти. А что было дальше — то уже другая история. И если вам почудится, что в толпе мелькнул хвост, — вам не почудилось.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "george",
+    "direction": "[thoughtfully]"
+  },
+  "b18e4cc833bdde37167ef1c6455911004a9e5b4fd75d58e53159ee3feb2df23a": {
+    "file": "b18e4cc833bdde37167ef1c6455911004a9e5b4fd75d58e53159ee3feb2df23a_abcbd46eba88.mp3",
+    "speaker": "Кочегар",
+    "text": "Иди уж на свой ковёр. Ни пуха тебе, ни пера.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "chris",
+    "direction": "[gruffly] [wearily]"
+  },
+  "e64831d5c87a58e240b9cb344674a204ec68b76d63c8025bdcd3a8cdfbe00b13": {
+    "file": "e64831d5c87a58e240b9cb344674a204ec68b76d63c8025bdcd3a8cdfbe00b13_5a24c06c7d40.mp3",
+    "speaker": "Кочегар",
+    "text": "Ищи кочергу, рогатый. Небось секретаришка опять к себе уволок — бумажки свои ворошить.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "chris",
+    "direction": "[gruffly] [wearily]"
+  },
+  "a01d733bce12f19bf23c49339bc82705b3bcec2621e5d70372fa8be0072d2d08": {
+    "file": "a01d733bce12f19bf23c49339bc82705b3bcec2621e5d70372fa8be0072d2d08_e8c975263012.mp3",
+    "speaker": "Кочегар",
+    "text": "Кочергу утащили! Без кочерги огонь не разворошишь, без огня печать не нагреешь, а холодной печатью талон не пропечатать. Порядок!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "chris",
+    "direction": "[gruffly] [wearily]"
+  },
+  "ed38d1efa2cf28e8d48a3003161d968ac7adf8fe488b9c61776865543cb351d1": {
+    "file": "ed38d1efa2cf28e8d48a3003161d968ac7adf8fe488b9c61776865543cb351d1_458135bfc927.mp3",
+    "speaker": "Кочегар",
+    "text": "Куда прёшь? На ковёр? Без талона секретарь не пустит. Талоны у меня — да выдать не могу.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "chris",
+    "direction": "[gruffly] [wearily]"
+  },
+  "0b4c495c9e44e8af0e100c076820654f63c9891ec1e7cdf4553766f79e07ebdd": {
+    "file": "0b4c495c9e44e8af0e100c076820654f63c9891ec1e7cdf4553766f79e07ebdd_0032f1687cfe.mp3",
+    "speaker": "Кочегар",
+    "text": "О! Родимая! А ну-ка... Вот теперь жарко! Держи талон — горяченький, с пылу с жару. В руках долго не держи.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "chris",
+    "direction": "[gruffly] [wearily]"
+  },
+  "6e09d2b32178517a5d95809807d8ecc245a5da5d586932465a14d51c3a003bcc": {
+    "file": "6e09d2b32178517a5d95809807d8ecc245a5da5d586932465a14d51c3a003bcc_6f71a12afb84.mp3",
+    "speaker": "Кочегар",
+    "text": "Так ты туда и идёшь.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "chris",
+    "direction": "[gruffly] [wearily]"
+  },
+  "ac333b76a35535bd2459d2d3a607c3ab942f6174b662881dfba05bf8b00d9608": {
+    "file": "ac333b76a35535bd2459d2d3a607c3ab942f6174b662881dfba05bf8b00d9608_9ecf631c960b.mp3",
+    "speaker": "Люцифер",
+    "text": "А, явился, ловец душ. Становись на ковёр — да поровнее, узор не топчи.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "brian",
+    "direction": "[smugly] [with slow menace]"
+  },
+  "0821d1b6595d0a5bd43dbb5c45782f0264d800075bb937767909c82d286bbe21": {
+    "file": "0821d1b6595d0a5bd43dbb5c45782f0264d800075bb937767909c82d286bbe21_776b9bdc9716.mp3",
+    "speaker": "Люцифер",
+    "text": "Знаю, что доставлены. А почему так быстро? Я тебе тысячу лет на всё отвёл, а ты за три дня управился.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "brian",
+    "direction": "[smugly] [with slow menace]"
+  },
+  "efa4a89ac088c856d45bbc436435031f7e292d57cce05c7cea1e446d4ac4b367": {
+    "file": "efa4a89ac088c856d45bbc436435031f7e292d57cce05c7cea1e446d4ac4b367_b691c6f0d448.mp3",
+    "speaker": "Люцифер",
+    "text": "Отпуск — это в раю. А у нас работа. Ступай. Подробности — у секретаря.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "brian",
+    "direction": "[smugly] [with slow menace]"
+  },
+  "157d0f9ebee78afe7e1023a238e0c6daeee8c07459f357e09a9e16fc560f12f4": {
+    "file": "157d0f9ebee78afe7e1023a238e0c6daeee8c07459f357e09a9e16fc560f12f4_024257993b04.mp3",
+    "speaker": "Люцифер",
+    "text": "По талону.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "brian",
+    "direction": "[smugly] [with slow menace]"
+  },
+  "a96a533a6bcaea7e72c689ef527bb8dac5d6fd0ae53975f7a03c2ebcce4dc0e6": {
+    "file": "a96a533a6bcaea7e72c689ef527bb8dac5d6fd0ae53975f7a03c2ebcce4dc0e6_7506423ebd99.mp3",
+    "speaker": "Люцифер",
+    "text": "Хорошо?! Бухгалтерия в обмороке, котлы не чищены, премию теперь выписывать! Нет, рогатый, за такую прыть награда одна — новое задание.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "brian",
+    "direction": "[smugly] [with slow menace]"
+  },
+  "14df92197437c579cd73eccb9a919673788e414ef70c489d8ee846aabd3bae2f": {
+    "file": "14df92197437c579cd73eccb9a919673788e414ef70c489d8ee846aabd3bae2f_136472a03826.mp3",
+    "speaker": "Паладин",
+    "text": "Ай-ай-ай! Горячо! Кто тут шурует?!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "harry",
+    "direction": "[indignantly]"
+  },
+  "61da00a9838cd9f8a3f6275d5f9a71a10794e7e8cad1ddc01f659e3725349068": {
+    "file": "61da00a9838cd9f8a3f6275d5f9a71a10794e7e8cad1ddc01f659e3725349068_f1e2541e84e4.mp3",
+    "speaker": "Паладин",
+    "text": "Не карапуз, а рыцарь ордена! И груз упал нечестно — сзади!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "harry",
+    "direction": "[indignantly]"
+  },
+  "b86efb1206568c373fa8f840a8d938c9a576111f4ccb2723cfa345cfff6f72a9": {
+    "file": "b86efb1206568c373fa8f840a8d938c9a576111f4ccb2723cfa345cfff6f72a9_c4428fcc103c.mp3",
+    "speaker": "Паладин",
+    "text": "Освободи меня, нечистый, и я тебя... ну, может, и не зарублю.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "harry",
+    "direction": "[indignantly]"
+  },
+  "0ea0d5dd212a5badeb2d70ccaae251347b1496a7ba9af797ff35f87d340ad8ff": {
+    "file": "0ea0d5dd212a5badeb2d70ccaae251347b1496a7ba9af797ff35f87d340ad8ff_b51352704d16.mp3",
+    "speaker": "Паладин",
+    "text": "Чуть тёплая! Кочегар опять огонь не шурует. Варюсь тут, как в предбаннике, — ни ада, ни удовольствия.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "harry",
+    "direction": "[indignantly]"
+  },
+  "52a93837f39beb767b2a0aad6f23be54ba340d14e053f38e0373a33f756ee0f4": {
+    "file": "52a93837f39beb767b2a0aad6f23be54ba340d14e053f38e0373a33f756ee0f4_728a190f4991.mp3",
+    "speaker": "Секретарь",
+    "text": "Ай! Жжётся! ...Так-с. Печать на месте, подпись неразборчива — всё по форме. Проходите на ковёр. Его Темнейшество вас ждёт. Давно ждёт.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "river",
+    "direction": "[pompously] [fussily]"
+  },
+  "5a9fd581a4e2e414c90ec9d50a568fb3f524ff112615e7d76cb9987c7bedb211": {
+    "file": "5a9fd581a4e2e414c90ec9d50a568fb3f524ff112615e7d76cb9987c7bedb211_2c2dd22f3ca6.mp3",
+    "speaker": "Секретарь",
+    "text": "Бумажка, рогатый, — она и в аду бумажка. Без талона на ковёр не ступишь.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "river",
+    "direction": "[pompously] [fussily]"
+  },
+  "17aa05c25fc32f0aeb9e7a38654d5c7eb090f511e41fc666355a6a9147324a46": {
+    "file": "17aa05c25fc32f0aeb9e7a38654d5c7eb090f511e41fc666355a6a9147324a46_4e91f46c0ad5.mp3",
+    "speaker": "Секретарь",
+    "text": "Вызвали — не значит пустили. Талон есть? Нет талона — нет приёма. Талоны выдаёт кочегар. Следующий!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "river",
+    "direction": "[pompously] [fussily]"
+  },
+  "75864395642ffd02f73b5e026bc32b67b077c3000614b088bb9ea257f8980519": {
+    "file": "75864395642ffd02f73b5e026bc32b67b077c3000614b088bb9ea257f8980519_6cf39c7d5266.mp3",
+    "speaker": "Секретарь",
+    "text": "Не мешайте работать. У меня грешники по алфавиту не разложены.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "river",
+    "direction": "[pompously] [fussily]"
+  },
+  "aaf08ddf263e695de5f481aceeddbfbd7956995897efbcdf096ad16f28573626": {
+    "file": "aaf08ddf263e695de5f481aceeddbfbd7956995897efbcdf096ad16f28573626_75d086a40495.mp3",
+    "speaker": "Секретарь",
+    "text": "Проходите, проходите. Не задерживайте очередь.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "river",
+    "direction": "[pompously] [fussily]"
+  },
+  "6b3ee2883e6152819e55e6cc3082abc528e31fe77966ad697381b820d822af93": {
+    "file": "6b3ee2883e6152819e55e6cc3082abc528e31fe77966ad697381b820d822af93_cc46dab1297e.mp3",
+    "speaker": "Секретарь",
+    "text": "Стоять! Приёмная Его Темнейшества. Вы записаны?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "river",
+    "direction": "[pompously] [fussily]"
+  },
+  "61a0ebb023210e51f939bc6c3e432fb0f7475a2b94499de9e7b53f77f498883f": {
+    "file": "61a0ebb023210e51f939bc6c3e432fb0f7475a2b94499de9e7b53f77f498883f_c11ba2b73508.mp3",
+    "speaker": "Черт",
+    "text": "А как же отпуск?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "f5c9c12ccd9043f69f0a6520a0a3033b2fa24f63e11c4c7f4699b0667e11d977": {
+    "file": "f5c9c12ccd9043f69f0a6520a0a3033b2fa24f63e11c4c7f4699b0667e11d977_9a8aa52dd76c.mp3",
+    "speaker": "Черт",
+    "text": "Ваше Темнейшество, три души доставлены! Баланс восстановлен: рай и ад — ноль-ноль.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "7f186316e1c25b5e2acbf96352685ffae0f9f0a487a7de0f253a0f8558b3815f": {
+    "file": "7f186316e1c25b5e2acbf96352685ffae0f9f0a487a7de0f253a0f8558b3815f_8aeff509c7d5.mp3",
+    "speaker": "Черт",
+    "text": "Вот талон. Горячий, с печатью.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "3b729c45d13fdd2b43a7fc69900e5f2eebf8709da2f9b8ebdd843aaf8d475c35": {
+    "file": "3b729c45d13fdd2b43a7fc69900e5f2eebf8709da2f9b8ebdd843aaf8d475c35_d8cddbc60a08.mp3",
+    "speaker": "Черт",
+    "text": "Держи свою кочергу, трудяга.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "2e46779dc9e4c0e4844caa63796b3fa078204ff4ecabdaa229db53f79d8e0037": {
+    "file": "2e46779dc9e4c0e4844caa63796b3fa078204ff4ecabdaa229db53f79d8e0037_8909bcc4ffd3.mp3",
+    "speaker": "Черт",
+    "text": "Заманчиво. Но нет.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "ba6b3e660e1871ef8f27145c4999079778c5d4e1deee7912da5c39de27af6d52": {
+    "file": "ba6b3e660e1871ef8f27145c4999079778c5d4e1deee7912da5c39de27af6d52_cc9c42b4835d.mp3",
+    "speaker": "Черт",
+    "text": "К чёрту!",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "420c1c57a98c28a316893b47413c14ba6226c51007e9fd12d91d2090ef5366c5": {
+    "file": "420c1c57a98c28a316893b47413c14ba6226c51007e9fd12d91d2090ef5366c5_c66f435f3652.mp3",
+    "speaker": "Черт",
+    "text": "Ну вот, родное пекло. Вчера я был героем, а нынче — вызван на ковёр. Видать, начальство недовольно. Пойду узнаю, в чём сыр-бор.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "b8ef7560e6703dd0ce59b7608027a712e68531c71bb0eef8b33b85f1b64d47b1": {
+    "file": "b8ef7560e6703dd0ce59b7608027a712e68531c71bb0eef8b33b85f1b64d47b1_a658e4083283.mp3",
+    "speaker": "Черт",
+    "text": "Ну как водичка, благородный?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "f121e03d4e8fd71d56975206a61a2e84e4ddb3b4f18eecb7422f46b7006723e5": {
+    "file": "f121e03d4e8fd71d56975206a61a2e84e4ddb3b4f18eecb7422f46b7006723e5_e28a3efb0b39.mp3",
+    "speaker": "Черт",
+    "text": "По талону?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "e7c7910f123f5a506b645af7f5b7da1aa3898bf9b78e2b631dc241ee92d45050": {
+    "file": "e7c7910f123f5a506b645af7f5b7da1aa3898bf9b78e2b631dc241ee92d45050_45952de880e0.mp3",
+    "speaker": "Черт",
+    "text": "С детства мальчик чертей не любил — меч свой точил и доспехи носил. Но вот незадача — упал сверху груз. Счёт ноль-один — проиграл карапуз.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "2eef295a27154fff2cf41adb3d1eb7d6eec82506a339565d9dfad3e79d82c415": {
+    "file": "2eef295a27154fff2cf41adb3d1eb7d6eec82506a339565d9dfad3e79d82c415_7c90df387321.mp3",
+    "speaker": "Черт",
+    "text": "Так это ж хорошо...",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "aae045d856df0ba4af7f2e8ac21edd1dfa1e3f68710cbf8a9f8cf2d33b8039da": {
+    "file": "aae045d856df0ba4af7f2e8ac21edd1dfa1e3f68710cbf8a9f8cf2d33b8039da_92f2317a8a64.mp3",
+    "speaker": "Черт",
+    "text": "Это почему же?",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
+  },
+  "e220fd8ac9586d0a05f78f56a0b28c54565c7c69f37448b97394f65cb8fe1999": {
+    "file": "e220fd8ac9586d0a05f78f56a0b28c54565c7c69f37448b97394f65cb8fe1999_91bbd2e5bc83.mp3",
+    "speaker": "Черт",
+    "text": "Я души принёс. Три штуки. Меня на ковёр вызвали.",
+    "model": "elevenlabs/eleven-v4",
+    "voice": "charlie",
+    "direction": "[playfully]"
   }
 }

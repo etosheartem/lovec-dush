@@ -198,7 +198,7 @@ func check_entrances(width: int) -> void:
 func check_pages(width: int) -> void:
 	game.menus.update = {version = "9.99", url = ""}
 	game.menus._update_shown = true
-	for page in ["home", "pause", "settings", "credits", "help", "confirm_new", "update"]:
+	for page in ["home", "pause", "settings", "credits", "help", "confirm_new", "update", "sequel"]:
 		game.menus.show_page(page)
 		game.menus.message("Не удалось сохранить игру. Проверь свободное место.")
 		await settle_layout()

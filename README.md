@@ -8,12 +8,12 @@
 
 ![Godot 4.7](https://img.shields.io/badge/Godot-4.7-478cbf?logo=godotengine&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-arm64-3ddc84?logo=android&logoColor=white)
-![Версия](https://img.shields.io/badge/версия-0.16-ffcd71)
+![Версия](https://img.shields.io/badge/версия-0.17-ffcd71)
 ![Сюжет](https://img.shields.io/badge/сюжет-1%3A1%20с%20оригиналом-8a5a2b)
 
 ### [⬇ Скачать APK для Android](https://github.com/etosheartem/lovec-dush/releases/latest/download/lovec_dush.apk)
 
-<sub>Android 64-бит (arm64) · ~375 МБ · <a href="https://github.com/etosheartem/lovec-dush/releases">все версии</a></sub>
+<sub>Android 64-бит (arm64) · ~98 МБ · <a href="https://github.com/etosheartem/lovec-dush/releases">все версии</a></sub>
 
 <img src="docs/menu.jpg" alt="Главное меню" width="860">
 
@@ -77,7 +77,7 @@
   Каждый кадр подогнан к оригиналу по росту, положению ног и центру масс, чтобы анимация не «плыла».
 - Мягкие тени под персонажами, огонь и искры у костра, дым, пылинки в помещениях, туман на кладбище,
   свечение душ, мерцание свечей, люстр и фонарей.
-- Три режима качества: «Максимальное · 2К», «Высокое · Full HD» и «Экономное».
+- Графика 2К и три режима качества эффектов: «Максимальное», «Высокое» и «Экономное».
 
 **Звук**
 - Полная озвучка: вступление, все диалоги, скрипт-сцены и финал. Голоса выровнены по громкости.
@@ -124,7 +124,7 @@ game/
 ├── assets/
 │   ├── game.json      мир, выгруженный из оригинала: 30 сцен, 35 NPC и хотспотов, 32 предмета, 234 строки
 │   ├── sprites/       исходные спрайты (по ним считаются размеры и области нажатия)
-│   ├── hd/  qhd/      перерисованная графика, Full HD и 2К
+│   ├── hd/            перерисованная графика 2К
 │   ├── audio/         голоса, музыка, эффекты
 │   └── fonts/         оригинальный растровый шрифт
 └── tests/             headless-проверки

@@ -18,6 +18,8 @@ var _application_suspended := false
 var _focus_lost := false
 var update := {}              # {version, url} — вышла версия новее установленной
 var _update_shown := false
+var choice_options: Array = []
+var choice_question := ""
 
 
 func _ready() -> void:
@@ -292,6 +294,12 @@ func show_page(next_page: String) -> void:
 			_base("Продолжение следует…")
 			_text("Чёрт занял кресло Рассказчика и обмакнул перо.\n\nЧто он напишет дальше — узнаешь в следующих версиях игры. Она сама сообщит, когда они выйдут.").horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 			_button("В главное меню", func(): show_page("home"))
+		"choice":  # глава 2: выбор ответа в разговоре
+			_base("Что ответить?")
+			if not choice_question.is_empty():
+				_text(choice_question, 24).horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			for i in choice_options.size():
+				_button(choice_options[i], game.choose.bind(i))
 		"contract":  # финал главы 2: договор на душу игрока, время — настоящее, из счётчика на телефоне
 			_base("Договор")
 			var minutes := int(game.stats.play / 60) if game.get("stats") != null else 0
@@ -342,7 +350,16 @@ func _volume(key: String, title: String) -> void:
 	column.add_child(slider)
 
 
+func show_choice(options: Array, question := "") -> void:
+	choice_options = options
+	choice_question = question
+	show_page("choice")
+
+
 func back() -> void:
+	if page == "choice":
+		game.choose(-1)
+		return
 	if page == "graphics":
 		show_page("settings")
 	elif page in ["update", "sequel"]:

@@ -112,7 +112,7 @@ static func valid(data, game) -> bool:
 	for soul in data.souls:
 		if soul not in ["d", "e", "f"] or data.souls[soul] != true:
 			return false
-	if not _integer(data.ev, -1, 39) or not _integer(data.ev_wait, 0, 1000) \
+	if not _integer(data.ev, -1, 42) or not _integer(data.ev_wait, 0, 1000) \
 		or not _integer(data.burn_msg, 44, 46) or not data.ended is bool \
 		or not _integer(data.drop_slot, -1, 1) or not _number(data.follow_x) \
 		or not _number(data.idle_time) or not _number(data.tick_acc) \

@@ -51,6 +51,7 @@ var quitting := false
 var G: Dictionary
 var SPR: Dictionary
 var HELL := {}               # реплики событий дополнений (hell.json, glava2.json)
+var choice := {}             # ожидающий выбор ответа: {npc, k}; в сейв не попадает
 var tex_cache := {}
 var scenes := {}
 var cur_key := "3,2"
@@ -378,27 +379,68 @@ func _interact(e: Dictionary) -> void:
 			continue
 		if a.done:
 			continue
-		if a.need_item != null:
-			if not inv.has(int(a.need_item)):
-				continue
-			inv.erase(int(a.need_item))
-		a.done = true
-		if a.give_item != null:
-			_give(int(a.give_item))
-		e.free_dialogs = a.then_free_dialogs
-		e.p = 0
-		if a.reply != null:
-			_say(a.reply)
-		if a.event != null:
-			ev = int(a.event)
-		if e.pass_on != null and int(e.pass_on) == k:
-			e.blocker = false
-		_refresh_inv()
-		save_pending = true
+		if a.need_item != null and not inv.has(int(a.need_item)):
+			continue
+		if a.get("choice") != null:  # глава 2: сперва вопрос, потом выбор ответа
+			choice = {npc = e, k = k}
+			if a.reply != null:
+				_say(a.reply)
+			else:
+				_open_choice()
+			return
+		_complete(e, k, a.reply)
 		return
 	var w = _next_free(e)
 	if w != null:
 		_say(w)
+
+
+func _complete(e: Dictionary, k: int, reply) -> void:  # взаимодействие состоялось: предмет отдан, событие запущено
+	var a: Dictionary = e.interactions[k]
+	if a.need_item != null:
+		inv.erase(int(a.need_item))
+	a.done = true
+	if a.give_item != null:
+		_give(int(a.give_item))
+	e.free_dialogs = a.then_free_dialogs
+	e.p = 0
+	if reply != null:
+		_say(reply)
+	if a.event != null:
+		ev = int(a.event)
+	if e.pass_on != null and int(e.pass_on) == k:
+		e.blocker = false
+	_refresh_inv()
+	save_pending = true
+
+
+func _open_choice() -> void:
+	menu_open = true
+	var a: Dictionary = choice.npc.interactions[choice.k]
+	var question := ""
+	if a.reply != null and not a.reply.lines.is_empty():
+		var last: Dictionary = a.reply.lines[-1]
+		question = "%s: %s" % [last.speaker, last.text]
+	menus.show_choice(a.choice.options.map(func(o): return o.text), question)
+
+
+func choose(index: int) -> void:  # ответ из окна выбора; -1 — передумал (предмет остаётся)
+	menus.hide()
+	menu_open = false
+	if choice.is_empty():
+		return
+	var e: Dictionary = choice.npc
+	var k: int = choice.k
+	choice = {}
+	if index < 0:
+		return
+	var option: Dictionary = e.interactions[k].choice.options[index]
+	if option.ok:
+		_complete(e, k, option.reply)
+	else:
+		_say(option.reply)  # неверно: смешной провал, предмет не тратится
+		if option.get("fail_event") != null:
+			ev = int(option.fail_event)
 
 
 func _next_free(e: Dictionary):  # f.b(): свободные реплики по кругу, once — один раз
@@ -627,6 +669,18 @@ func _run_event(n: int) -> void:
 			var e := _npc("3,5", 0)
 			e.x = 150
 			e.actor.x = 150
+		40:  # Цербер покусал — обратно в бухгалтерию
+			_go([2, 3], [215, 182])
+			target = {}
+			_say({lines = HELL.bitten})
+		41:  # король не засмеялся — в темницу, из неё выход один, на улицу
+			_go([3, 4], [215, 182])
+			target = {}
+			_say({lines = HELL.dungeon})
+		42:  # разбил часы — время откатило чёрта назад, в канцелярию
+			_go([1, 5], [152, 182])
+			target = {}
+			_say({lines = HELL.rewind})
 		39:  # книга дописала правду — договор с игроком
 			menu_open = true
 			game_layer.visible = false
@@ -1086,6 +1140,9 @@ func _advance_dialog() -> void:
 		_show_line()
 		return
 	ui_dialog.hide()
+	if not choice.is_empty():
+		_open_choice()
+		return
 	if ended:
 		save_game()
 		in_game = false

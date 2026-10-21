@@ -84,6 +84,7 @@ func _run() -> void:
 	test_grave_tap()
 	test_stats()
 	test_update_offer()
+	test_glava2_start()
 	# Let AudioServer commit play/stop commands before releasing looping streams.
 	await create_timer(0.15).timeout
 	for game in retired:
@@ -446,6 +447,19 @@ func test_update_offer() -> void:
 	check(menus.page == "home", "later returns to the home screen")
 	game.show_home()
 	check(menus.page == "home", "update is offered once per launch")
+	retire(game)
+
+
+func test_glava2_start() -> void:
+	var game = fresh()
+	idle(game)
+	game.start_glava2()
+	advance(game, 1.0)
+	while game.dialog_lines.size() > 0:
+		game._advance_dialog()
+	advance(game, 1.0)
+	check(game.cur_key == "1,3" and game.inv.has(34) and game.scenes["1,3"].exits[1].open,
+		"chapter 2 test start: audit ticket in hand, door to accounting open")
 	retire(game)
 
 

@@ -2,7 +2,7 @@ extends RefCounted
 ## Versioned, JSON-only saves. Restore references after rebuilding the original world.
 
 const VERSION := 1
-const AVATAR_COUNT := 14 # Портреты 0..9 оригинала + 10..13 ада.
+const AVATAR_COUNT := 30 # Портреты 0..9 оригинала, 10..13 ада, 14..29 главы 2.
 const FIELDS := ["cur_key", "inv", "souls", "burn_msg", "ev", "ev_wait", "saved",
 	"pending_pick", "drop_slot", "idle_time", "tick_acc", "ended", "follow_x", "dialog_lines"]
 const NPC_FIELDS := ["x", "y", "extent", "radius", "flip", "blocker", "p", "frames", "free_dialogs"]
@@ -112,7 +112,7 @@ static func valid(data, game) -> bool:
 	for soul in data.souls:
 		if soul not in ["d", "e", "f"] or data.souls[soul] != true:
 			return false
-	if not _integer(data.ev, -1, 31) or not _integer(data.ev_wait, 0, 1000) \
+	if not _integer(data.ev, -1, 39) or not _integer(data.ev_wait, 0, 1000) \
 		or not _integer(data.burn_msg, 44, 46) or not data.ended is bool \
 		or not _integer(data.drop_slot, -1, 1) or not _number(data.follow_x) \
 		or not _number(data.idle_time) or not _number(data.tick_acc) \

@@ -50,7 +50,7 @@ var quitting := false
 
 var G: Dictionary
 var SPR: Dictionary
-var HELL: Dictionary         # assets/hell.json: реплики рассказчика и чёрта в эпилоге
+var HELL := {}               # реплики событий дополнений (hell.json, glava2.json)
 var tex_cache := {}
 var scenes := {}
 var cur_key := "3,2"
@@ -140,11 +140,13 @@ class Actor:
 
 func _ready() -> void:
 	G = JSON.parse_string(FileAccess.get_file_as_string("res://assets/game.json"))
-	# Эпилог в аду — своё дополнение поверх оригинала: комнаты 0,3 и 1,3, предметы 32-33.
-	var hell: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/hell.json"))
-	G.items.append_array(hell.items)
-	G.scenes.merge(hell.scenes)
-	HELL = hell.lines
+	# Свои дополнения поверх оригинала, порядок важен (индексы предметов):
+	# эпилог в аду — комнаты 0,3 и 1,3, предметы 32-33; глава 2 «Недостача» — ряды 2..5,3 / 4 / 5, предметы 34-51.
+	for addon in ["hell", "glava2"]:
+		var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/%s.json" % addon))
+		G.items.append_array(data.items)
+		G.scenes.merge(data.scenes)
+		HELL.merge(data.lines)
 	SPR = JSON.parse_string(FileAccess.get_file_as_string("res://assets/sprites/sprites.json"))
 	_reset_world()
 	graphics = GraphicsSettings.new()
@@ -163,7 +165,7 @@ func _ready() -> void:
 	add_child(sound)
 	stats = Stats.new()
 	add_child(stats)
-	stats.setup(settings_path, persistence_enabled and not OS.has_feature("hell_test"))  # тест ада не считаем
+	stats.setup(settings_path, persistence_enabled and not OS.has_feature("hell_test") and not OS.has_feature("glava2_test"))  # тесты не считаем
 	stats.ping(0)
 	_build_ui()
 	menus = GameMenu.new()
@@ -598,9 +600,38 @@ func _run_event(n: int) -> void:
 			var e := _npc("1,3", 0)
 			e.x = 95
 			e.actor.x = 95
-		31:  # разговор с Люцифером окончен — финал
-			_say({lines = [{speaker = G.strings[33], avatar = 5, text = HELL.end}]})
-			ended = true
+		31:  # разговор с Люцифером окончен — ревизия: начинается глава 2
+			_say({lines = [{speaker = G.strings[33], avatar = 5, text = HELL.end}] + HELL.revizia})
+			_give(34)  # талон на ревизию
+			scenes["1,3"].exits[1].open = true
+			_refresh_inv()
+		32:  # ладья Харона: через Стикс на Землю
+			_go([0, 4], [60, 182])
+			target = {}
+			_say({lines = HELL.ferry})
+		33:  # головы Цербера дерутся за ребро в углу
+			var e := _npc("3,3", 0)
+			e.x = 40
+			e.actor.x = 40
+		35:  # протрезвевший ангел с нимбом — в рай
+			_go([0, 5], [40, 182])
+			target = {}
+			_say({lines = HELL.flight})
+		36:  # архивариус открыл архив
+			scenes["1,5"].exits[2].open = true
+		37:  # Пётр пропускает «доктора»
+			var e := _npc("0,5", 0)
+			e.x = 70
+			e.actor.x = 70
+		38:  # Время остановилось и уснуло у стены
+			var e := _npc("3,5", 0)
+			e.x = 150
+			e.actor.x = 150
+		39:  # книга дописала правду — договор с игроком
+			menu_open = true
+			game_layer.visible = false
+			sound.pause_voice(true)
+			menus.show_page("contract")
 
 
 # ---------- ввод ----------
@@ -1075,6 +1106,8 @@ func new_game() -> void:
 		souls = {d = true, e = true, f = true}
 		ev = 28
 		ev_wait = 0
+	if OS.has_feature("glava2_test"):  # тестовая сборка «глава 2»
+		start_glava2()
 	in_game = true
 	ui_dialog.hide()
 	sound.stop_voice()
@@ -1096,7 +1129,11 @@ func continue_game() -> bool:
 		_show_line()
 	else:
 		ui_dialog.hide()
-		if ended:
+		if ended and cur_key == "1,3" and not scenes["1,3"].exits[1].open:
+			ended = false  # ад пройден в 0.17/0.18 — дальше глава 2
+			ev = 31
+			ev_wait = 0
+		elif ended:
 			in_game = false
 			show_home()
 			menus.message("Игра пройдена. Можно начать новое приключение.")
@@ -1138,6 +1175,30 @@ func resume_game() -> void:
 	sound.pause_voice(false)
 	sound.location(cur_key)
 	_refresh_drop_buttons()
+
+
+func start_glava2() -> void:  # ад пройден, Секретарь объявляет ревизию (тестовая сборка и тесты)
+	souls = {d = true, e = true, f = true}
+	cur_key = "1,3"
+	devil.x = 150
+	devil.y = 182
+	var clerk := _npc("1,3", 0)
+	clerk.blocker = false
+	clerk.x = 95
+	clerk.actor.x = 95
+	clerk.interactions[0].done = true
+	_npc("1,3", 1).interactions[0].done = true
+	ev = 31
+	ev_wait = 0
+
+
+func finale_contract(signed: bool) -> void:  # кнопка в окне договора: ответ один, реплика разная
+	menus.hide()
+	menu_open = false
+	game_layer.visible = true
+	sound.pause_voice(false)
+	_say({lines = (HELL.signed if signed else HELL.refused) + HELL.after})
+	ended = true
 
 
 func show_home() -> void:

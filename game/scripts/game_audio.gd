@@ -103,8 +103,10 @@ func location(room: String, in_menu := false) -> void:
 		return
 	if in_menu:
 		walking(0, false) # A later Continue must initialize contacts from its saved gait.
-	var outside := room.get_slice(",", 1) == "2"
-	var next_context := "menu" if in_menu else "street" if outside else "monastery"
+	var row := room.get_slice(",", 1)
+	var outside := row in ["2", "4", "5"]  # улица оригинала, посад Гробово и рай — под открытым небом
+	var chapter := {"3": "hell", "4": "grobovo", "5": "heaven"}  # глава 2 и ад — свои темы
+	var next_context: String = "menu" if in_menu else chapter.get(row, "street" if outside else "monastery")
 	if context != next_context:
 		context = next_context
 		_loop(music, "music_" + context)

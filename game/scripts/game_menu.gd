@@ -290,8 +290,14 @@ func show_page(next_page: String) -> void:
 			_button("Позже", func(): show_page("home"))
 		"sequel":
 			_base("Продолжение следует…")
-			_text("Отпуск чёрту так и не дали: Люцифер отправил его на новое задание.\n\nЧто было дальше — узнаешь в следующих версиях игры. Она сама сообщит, когда они выйдут.").horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			_text("Чёрт занял кресло Рассказчика и обмакнул перо.\n\nЧто он напишет дальше — узнаешь в следующих версиях игры. Она сама сообщит, когда они выйдут.").horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 			_button("В главное меню", func(): show_page("home"))
+		"contract":  # финал главы 2: договор на душу игрока, время — настоящее, из счётчика на телефоне
+			_base("Договор")
+			var minutes := int(game.stats.play / 60) if game.get("stats") != null else 0
+			_text("Я, нижеподписавшийся игрок, передаю в счёт недостачи ада свою бессмертную душу.\n\nНаиграно: %d ч %d мин — засчитано авансом." % [minutes / 60, minutes % 60]).horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			_button("Подписать", func(): game.finale_contract(true))
+			_button("Отказаться", func(): game.finale_contract(false))
 		"confirm_new":
 			_base("Новая игра")
 			_text("Начать сначала? Текущее сохранение будет заменено.")

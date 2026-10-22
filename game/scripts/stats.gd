@@ -44,22 +44,26 @@ func setup(path: String, enabled_: bool) -> void:
 	add_child(http)
 
 
-func tick(dt: float, souls: int) -> void:
+func tick(dt: float, souls: Dictionary) -> void:
 	play += dt
 	since_ping += dt
 	if since_ping >= EVERY:
 		ping(souls)
 
 
-func ping(souls: int, finished := false) -> void:
+func ping(souls: Dictionary, finished := false) -> void:
 	since_ping = 0
 	_store()
 	if not enabled or http == null or http.get_http_client_status() != HTTPClient.STATUS_DISCONNECTED:
 		return
 	var body := JSON.stringify({id = id, v = str(ProjectSettings.get_setting("application/config/version", "0")),
-		t = int(play), s = clampi(souls, 0, 3), f = finished,
+		t = int(play), s = clampi(souls.size(), 0, 3), d = _soul_set(souls), f = finished,
 		m = OS.get_model_name().left(48), a = OS.get_version().left(16)})
 	http.request(URL, ["Content-Type: application/json"], HTTPClient.METHOD_POST, body)
+
+
+static func _soul_set(souls: Dictionary) -> String:  # какие души: d Чернокнижник, e Дона Анна, f Послушник
+	return "".join(["d", "e", "f"].filter(func(k): return souls.has(k)))  # не sort(): StringName сортируется не по алфавиту
 
 
 func _store() -> void:

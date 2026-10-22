@@ -421,15 +421,16 @@ func test_stats() -> void:
 	check(not st.enabled, "tests never send stats")
 	check(st.id.length() == 32 and st.id.is_valid_hex_number(), "stats id is 32 hex chars")
 	var before: float = st.play
-	st.tick(st.EVERY - 1, 0)
+	st.tick(st.EVERY - 1, {})
 	check(is_equal_approx(st.play - before, st.EVERY - 1) and st.since_ping > 0, "play time accumulates")
-	st.tick(2, 1)
+	st.tick(2, {e = true})
 	check(st.since_ping == 0, "ping timer resets after five minutes of play")
 	var cert := X509Certificate.new()
 	check(cert.load_from_string(st.CERT) == OK, "pinned stats certificate parses")
 	st.since_ping = 100.0
 	game._soul("e")
 	check(st.since_ping == 0, "a new soul is reported right away")
+	check(st._soul_set({f = true, d = true}) == "df" and st._soul_set({}) == "", "soul set is sorted keys")
 	retire(game)
 
 

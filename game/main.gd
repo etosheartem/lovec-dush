@@ -167,7 +167,7 @@ func _ready() -> void:
 	stats = Stats.new()
 	add_child(stats)
 	stats.setup(settings_path, persistence_enabled and not OS.has_feature("hell_test") and not OS.has_feature("glava2_test"))  # тесты не считаем
-	stats.ping(0)
+	stats.ping({})
 	_build_ui()
 	menus = GameMenu.new()
 	menus.game = self
@@ -261,7 +261,7 @@ func _process(dt: float) -> void:
 	autosave_time += dt
 	if save_pending or autosave_time > 10:
 		save_game()
-	stats.tick(dt, souls.size())
+	stats.tick(dt, souls)
 	status_time = maxf(0, status_time - dt)
 	hud_status.visible = status_time > 0
 
@@ -513,7 +513,7 @@ func _line(text_id: int, speaker := -1, avatar := 3) -> Dictionary:
 
 func _soul(s: String) -> void:  # u.d(): все три души — финал
 	souls[s] = true
-	stats.ping(souls.size())  # сразу: до финала может не случиться ни паузы, ни 5 минут игры
+	stats.ping(souls)  # сразу: до финала может не случиться ни паузы, ни 5 минут игры
 	sound.effect("soul")
 	if souls.size() == 3:
 		ev = 26
@@ -1146,7 +1146,7 @@ func _advance_dialog() -> void:
 	if ended:
 		save_game()
 		in_game = false
-		stats.ping(souls.size(), true)
+		stats.ping(souls, true)
 		show_home()
 		menus.show_page("sequel")
 
@@ -1217,7 +1217,7 @@ func pause_game() -> void:
 		return
 	menu_open = true
 	var ok := save_game()
-	stats.ping(souls.size())
+	stats.ping(souls)
 	game_layer.visible = false
 	sound.pause_voice(true)
 	menus.show_page("pause")

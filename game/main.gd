@@ -759,13 +759,14 @@ func _pending(e: Dictionary) -> bool:
 
 func _npc_rect(e: Dictionary) -> Rect2:
 	if not e.has("actor"):
-		if cur_key == "9,2":
-			if int(e.x) == 58:
-				return _exit_rect(scenes[cur_key].exits[1])
-			if int(e.x) == 210:
-				return _exit_rect(scenes[cur_key].exits[2])
-		var w: float = maxf(e.extent, 10) + 10
-		return Rect2(e.x - w, e.y - 30, w * 2, 60)
+		var rect: Rect2
+		if cur_key == "9,2" and int(e.x) in [58, 210]:
+			rect = _exit_rect(scenes[cur_key].exits[1 if int(e.x) == 58 else 2])
+		else:
+			var w: float = maxf(e.extent, 10) + 10
+			rect = Rect2(e.x - w, e.y - 30, w * 2, 60)
+		var eyes := _eye_rect(e)
+		return rect.merge(eyes) if eyes.has_area() else rect
 	var a: Actor = e.actor
 	var tx := _orig("%s/%d" % [a.sheet, a.frame()])
 	var anc: Array = SPR[a.sheet].anchors[a.frame()]
@@ -777,7 +778,19 @@ func _npc_rect(e: Dictionary) -> Rect2:
 			return Rect2()
 		return Rect2(e.x - 34, e.y - lift - 92, 48, 120)
 	var left: float = a.x - (tx.get_width() - anc[0] if a.flip else anc[0]) / KX
-	return Rect2(Vector2(left, a.y - lift - anc[1]) + _actor_visual_offset(a), tx.get_size() / Vector2(KX, 1))
+	return Rect2(Vector2(left, a.y - lift - anc[1]) + _actor_visual_offset(a), tx.get_size() / Vector2(KX, 1)).grow(3)
+
+
+func _eye_rect(e: Dictionary) -> Rect2:  # глазок хотспота, если ему есть что сказать: тап по нарисованному глазку
+	var free = e.get("free_dialogs")
+	if e.sheet != "virtual" or (e.interactions.is_empty() and (free == null or free.is_empty())):
+		return Rect2()  # пустые метки над объектом (крест Доны Анны, соковыжималка) отдают тап объекту
+	var npcs: Array = scenes[cur_key].npcs
+	var i := 0
+	while i < npcs.size() and not is_same(npcs[i], e):
+		i += 1
+	var at: Vector2 = Vector2(e.x, e.y - (0 if e.blocker else 10)) + EYE_SHIFT.get("%s/%d" % [cur_key, i], Vector2.ZERO)
+	return Rect2(at.x - 12 / KX, at.y - 7, 25 / KX, 16).grow(3)
 
 
 # ---------- отрисовка ----------

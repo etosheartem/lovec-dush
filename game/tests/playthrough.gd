@@ -2,11 +2,20 @@ extends SceneTree
 ## Прохождение «как игрок»: только экранные тапы по стрелкам дверей, персонажам и предметам,
 ## ходьба пешком, путь между комнатами ищется по открытым дверям. Ловит то, что walkthrough.gd
 ## пропускает телепортом: перекрытые хитбоксы, недоходы до дверей, блокеры.
-## godot --headless --path game --script res://tests/playthrough.gd
+## Действия делаются тапом в случайную видимую точку цели, а в каждой комнате все видимые пиксели
+## персонажей, предметов, стрелок и «глазков» прощупываются сеткой: куда тап попал на самом деле.
+## godot --headless --path game --script res://tests/playthrough.gd -- [--width=2520] [--seed=1] [--report=/tmp/taps.json]
 
+const STRIDE := 2.0  # шаг сетки в единицах оригинала (~10 px на экране 1080p)
 var m
 var failed := false
 var taps := 0
+var width := 1920
+var report_path := ""
+var rng := RandomNumberGenerator.new()
+var images := {}     # путь -> Image (альфа для «видимо ли»)
+var probes := {}     # комната|цель|кадр -> {points, miss, instead}
+var fallbacks: Array = []  # действия, где случайная видимая точка не сработала и пришлось тапать в центр
 
 
 func _initialize() -> void:
@@ -14,11 +23,22 @@ func _initialize() -> void:
 
 
 func start() -> void:
+	rng.seed = 1
+	for a in OS.get_cmdline_user_args():
+		if a.begins_with("--width="):
+			width = int(a.trim_prefix("--width="))
+		elif a.begins_with("--seed="):
+			rng.seed = int(a.trim_prefix("--seed="))
+		elif a.begins_with("--report="):
+			report_path = a.trim_prefix("--report=")
+	var vp := SubViewport.new()
+	vp.size = Vector2i(width, 1080)
+	root.add_child(vp)
 	m = load("res://main.tscn").instantiate()
 	m.persistence_enabled = false
 	m.save_path = "user://playthrough_unused.json"
 	m.settings_path = "user://playthrough_settings_unused.cfg"
-	root.add_child(m)
+	vp.add_child(m)
 	m.new_game()
 	m.set_process(false)
 	run()
@@ -107,6 +127,7 @@ func run() -> void:
 		return
 	check(m.menus.page == "sequel", "после финала нет окна «Продолжение следует»: %s" % m.menus.page)
 	var doors := all_doors()
+	report()
 	if not failed:
 		print("PLAYTHROUGH OK: %d тапов, %d мин игрового времени, дверей проверено %d" % [taps, int(m.stats.play / 60), doors])
 
@@ -130,7 +151,7 @@ func all_doors() -> int:  # каждая открытая дверь с тапа
 				var ex: Dictionary = sc.exits[i]
 				var to := "%d,%d" % [ex.to[0], ex.to[1]]
 				var start_x: float = m.devil.x
-				tap(m._arrow(ex)[0])
+				aim({kind = "exit", exit = ex}, m._arrow(ex)[0], "стрелка → " + to)
 				idle()
 				n += 1
 				if not check(m.cur_key == to, "дверь %s -> %s не сработала: старт x=%.1f, стоп x=%.1f" % [key, to, start_x, m.devil.x]):
@@ -198,7 +219,7 @@ func goto(key: String) -> bool:
 		var ex: Dictionary = m.scenes[m.cur_key].exits[i]
 		var from: String = m.cur_key
 		var to := "%d,%d" % [ex.to[0], ex.to[1]]
-		tap(m._arrow(ex)[0])
+		aim({kind = "exit", exit = ex}, m._arrow(ex)[0], "стрелка → " + to)
 		idle()
 		if not check(m.cur_key == to, "дверь %s -> %s не сработала с тапа по стрелке (чёрт на x=%.1f, цель %s)" \
 				% [from, to, m.devil.x, m._hit(m._arrow(ex)[0]).get("kind")]):
@@ -214,9 +235,10 @@ func take(key: String, item: int) -> void:
 	if not goto(key):
 		return
 	var fl: Array = m.scenes[key].floor_items
-	for it in fl:
+	for j in fl.size():
+		var it: Dictionary = fl[j]
 		if int(it.item) == item:
-			tap(Vector2(it.tx * 30 + 15, it.ty * 30 + 15))
+			aim({kind = "item", i = j}, Vector2(it.tx * 30 + 15, it.ty * 30 + 15), "предмет %d" % item)
 			idle()
 			check(m.inv.has(item), "%s: предмет %d не подобрался тапом, в руках %s" % [key, item, m.inv])
 			return
@@ -231,7 +253,7 @@ func use(key: String, i: int) -> void:
 	for a in e.interactions:
 		before += int(a.done)
 	var souls_before: int = m.souls.size()
-	tap(center(m._npc_rect(e)))
+	aim({kind = "npc", npc = e}, center(m._npc_rect(e)), e.get("name", "?"))
 	var hit_npc: bool = m.target.get("npc", {}) == e
 	idle()
 	var after := 0
@@ -245,7 +267,7 @@ func talk(key: String, i: int) -> void:  # персонаж только раз�
 	if not goto(key):
 		return
 	var e: Dictionary = m._npc(key, i)
-	tap(center(m._npc_rect(e)))
+	aim({kind = "npc", npc = e}, center(m._npc_rect(e)), e.get("name", "?"))
 	var spoke := false
 	for step in 2400:
 		if m.dialog_lines.size() > 0:
@@ -279,7 +301,7 @@ func choose(key: String, i: int, option: int, ok: bool) -> void:  # тап по 
 	for a in e.interactions:
 		before += int(a.done)
 	var had: Array = m.inv.duplicate()
-	tap(center(m._npc_rect(e)))
+	aim({kind = "npc", npc = e}, center(m._npc_rect(e)), e.get("name", "?"))
 	idle()
 	if not check(m.menus.page == "choice", "%s#%d (%s): нет выбора ответа, в руках %s" % [key, i, e.name, m.inv]):
 		return
@@ -294,3 +316,193 @@ func choose(key: String, i: int, option: int, ok: bool) -> void:  # тап по 
 		check(after > before, "%s#%d (%s): верный ответ не засчитан" % [key, i, e.name])
 	else:
 		check(after == before and m.inv == had, "%s#%d (%s): неверный ответ засчитан или съел предмет" % [key, i, e.name])
+
+
+# ---------- щуп: видимые пиксели целей и куда в них попадает тап ----------
+# Цель — то, что нарисовано в комнате: {key, label, expect, at, draw, flip, path, region | poly}.
+# at/draw — в экранных единицах комнаты (x уже умножен на KX), как в main._draw.
+
+func targets() -> Array:  # в порядке отрисовки: верхняя цель — последняя
+	var out := []
+	var sc: Dictionary = m.scenes[m.cur_key]
+	for i in sc.floor_items.size():
+		var it: Dictionary = sc.floor_items[i]
+		var sz: Vector2 = m._orig("artifacts/%d" % it.item).get_size()
+		out.append({label = "предмет «%s»" % m.G.items[int(it.item)].name, expect = {kind = "item", i = i},
+			at = Vector2((it.tx * 30 + 15) * m.KX, it.ty * 30 + 15), draw = Rect2(-sz / 2, sz), flip = false,
+			path = m._pack_path("artifacts/%d.png" % it.item)})
+	for ex in sc.exits:
+		if not m._exit_open(ex):
+			continue
+		var arrow: Array = m._arrow(ex)
+		var c: Vector2 = arrow[0]
+		var dir: Vector2 = arrow[1]
+		var n := Vector2(-dir.y, dir.x)
+		c.x *= m.KX
+		var poly := PackedVector2Array([c + dir * 6, c - dir * 3 + n * 5, c - dir * 3 - n * 5])
+		out.append({label = "стрелка → %d,%d" % [ex.to[0], ex.to[1]], expect = {kind = "exit", exit = ex},
+			poly = poly, draw = Rect2(c - Vector2(7, 7), Vector2(14, 14)), at = Vector2.ZERO, flip = false})
+	for i in sc.npcs.size():
+		var e: Dictionary = sc.npcs[i]
+		if not e.has("actor"):
+			continue
+		var a = e.actor
+		var fr: int = a.frame()
+		var orig: Texture2D = m._orig("%s/%d" % [a.sheet, fr])
+		if orig.get_width() <= 1 and orig.get_height() <= 1:
+			continue  # пустой кадр (Дона Анна в могиле) — её ловят «глазки»
+		var off: Vector2 = m._actor_visual_offset(a)
+		var t := {label = "%s (%s кадр %d)" % [e.get("name", "?"), a.sheet, fr], expect = {kind = "npc", npc = e},
+			at = Vector2((a.x + off.x) * m.KX, a.y + off.y - (0 if e.blocker else 10)), flip = a.flip}
+		if m.hd.has(a.sheet):
+			var h: Dictionary = m.hd[a.sheet]
+			t.draw = Rect2(-h.anchor[0], -h.anchor[1], h.canvas[0], h.canvas[1])
+			t.path = m._pack_path("%s/%d.png" % [a.sheet, fr])
+		else:
+			var anc: Array = m.SPR[a.sheet].anchors[fr]
+			t.draw = Rect2(Vector2(-anc[0], -anc[1]), orig.get_size())
+			t.path = "res://assets/sprites/%s/%d.png" % [a.sheet, fr]
+		out.append(t)
+	for i in sc.npcs.size():
+		var e: Dictionary = sc.npcs[i]
+		if e.sheet != "virtual" or not (m.EYE_ANIMS[int(e.frames[0])].has(0) or m.EYE_ANIMS[int(e.frames[0])].has(1)):
+			continue
+		var at: Vector2 = Vector2(e.x, e.y - (0 if e.blocker else 10)) + m.EYE_SHIFT.get("%s/%d" % [m.cur_key, i], Vector2.ZERO)
+		var empty: bool = e.interactions.is_empty() and (e.get("free_dialogs") == null or e.free_dialogs.is_empty())
+		out.append({label = "глазки %s" % e.get("name", "?"),  # пустая метка над объектом: годится любой объект
+			expect = {kind = "any"} if empty else {kind = "npc", npc = e},
+			at = Vector2(at.x * m.KX, at.y), draw = Rect2(-12, -7, 25, 16), flip = false,
+			path = "res://assets/sprites/virtual.png", region = Rect2(0, 0, 0.2, 1.0)})  # кадр 0 из пяти
+	return out
+
+
+func image(path: String) -> Image:
+	if not images.has(path):
+		var im := Image.load_from_file(ProjectSettings.globalize_path(path))  # исходный PNG, не ресурс
+		if im != null and im.is_compressed():
+			im.decompress()
+		images[path] = im
+	return images[path]
+
+
+func covers(t: Dictionary, s: Vector2) -> bool:  # s — экранная точка комнаты
+	if t.has("poly"):
+		return Geometry2D.is_point_in_polygon(s, t.poly)
+	var l: Vector2 = s - t.at
+	if t.flip:
+		l.x = -l.x
+	var uv: Vector2 = (l - t.draw.position) / t.draw.size
+	if uv.x < 0 or uv.y < 0 or uv.x >= 1 or uv.y >= 1:
+		return false
+	var im := image(t.path)
+	if im == null:
+		return false
+	var reg: Rect2 = t.get("region", Rect2(0, 0, 1, 1))
+	uv = reg.position + uv * reg.size
+	return im.get_pixel(int(uv.x * im.get_width()), int(uv.y * im.get_height())).a > 0.5
+
+
+func visible_points(ts: Array, k: int) -> Array:  # точки цели k, где сверху не нарисовано ничего другого
+	var t: Dictionary = ts[k]
+	var pts := []
+	var d: Rect2 = t.draw
+	var y := d.position.y + STRIDE / 2
+	while y < d.end.y:
+		var x := d.position.x + STRIDE / 2
+		while x < d.end.x:
+			var s: Vector2 = t.at + Vector2(-x if t.flip else x, y) if not t.has("poly") else Vector2(x, y)
+			if s.y < m.SCENE_H and covers(t, s) and not range(k + 1, ts.size()).any(func(j): return covers(ts[j], s)):
+				pts.append(Vector2(s.x / m.KX, s.y))  # обратно в координаты комнаты, как у _hit
+			x += STRIDE
+		y += STRIDE
+	return pts
+
+
+func hits(t: Dictionary, h: Dictionary, strict := true) -> bool:
+	var e: Dictionary = t.expect
+	if e.kind == "any":
+		return h.kind != "walk"
+	if not strict and e.kind == "exit" and h.kind == "npc" and h.npc.blocker:
+		return true  # проход заслонён (скелет у 1,1 до взрыва): тап по стрелке ведёт к заслону — так задумано
+	if h.kind != e.kind:
+		return false
+	match e.kind:
+		"item": return h.i == e.i
+		"exit": return is_same(h.exit, e.exit)
+		_: return is_same(h.npc, e.npc)
+
+
+func describe(h: Dictionary) -> String:
+	match h.kind:
+		"item": return "предмет «%s»" % m.G.items[int(m.scenes[m.cur_key].floor_items[h.i].item)].name
+		"exit": return "дверь → %d,%d" % [h.exit.to[0], h.exit.to[1]]
+		"npc": return h.npc.get("name", "хотспот")
+	return "ходьба"
+
+
+func survey() -> void:  # прощупать всё видимое в комнате (каждое состояние комнаты — один раз)
+	var ts := targets()
+	var sc: Dictionary = m.scenes[m.cur_key]
+	var state := "%d|%s|%s" % [sc.floor_items.size(), sc.exits.map(func(x): return m._exit_open(x)),
+		sc.npcs.map(func(e): return [e.actor.frame() if e.has("actor") else -1, m._pending(e)])]
+	for k in ts.size():
+		var t: Dictionary = ts[k]
+		var key := "%s|%s|%s" % [m.cur_key, t.label, state]
+		if probes.has(key):
+			continue
+		var pr := {room = m.cur_key, what = t.label, points = 0, miss = 0, instead = {}, example = []}
+		for p in visible_points(ts, k):
+			pr.points += 1
+			var h: Dictionary = m._hit(p)
+			if not hits(t, h, false):
+				pr.miss += 1
+				var d := describe(h)
+				pr.instead[d] = pr.instead.get(d, 0) + 1
+				if pr.example.size() < 3:
+					pr.example.append([snappedf(p.x, 0.1), snappedf(p.y, 0.1)])
+		probes[key] = pr
+
+
+func aim(expect: Dictionary, fallback: Vector2, what: String) -> void:
+	# Тап в случайную видимую точку цели; если промахнулся — запомнить и тапнуть как раньше.
+	survey()
+	var ts := targets()
+	var pts := []
+	for k in ts.size():
+		if hits({expect = expect}, ts[k].expect):
+			pts = visible_points(ts, k)
+			break
+	if not pts.is_empty():
+		var p: Vector2 = pts[rng.randi_range(0, pts.size() - 1)]
+		if hits({expect = expect}, m._hit(p)):
+			tap(p)
+			return
+		fallbacks.append("%s, %s: тап в видимую точку (%.1f, %.1f) ушёл в «%s»" % [m.cur_key, what, p.x, p.y, describe(m._hit(p))])
+	tap(fallback)
+
+
+func report() -> void:
+	var worst := {}  # комната|цель -> худшее состояние
+	for r in probes.values():
+		var k: String = r.room + "|" + r.what
+		if r.miss > 0 and (not worst.has(k) or float(r.miss) / r.points > float(worst[k].miss) / worst[k].points):
+			worst[k] = r
+	var rows := worst.values()
+	rows.sort_custom(func(a, b): return float(a.miss) / a.points > float(b.miss) / b.points)
+	var total := 0
+	for r in probes.values():
+		total += r.points
+	print("TAPS %d:1080 — прощупано состояний целей %d, точек %d; целей с промахами %d, мимо при прохождении %d" \
+		% [width, probes.size(), total, rows.size(), fallbacks.size()])
+	for r in rows:
+		var instead := ", ".join(r.instead.keys().map(func(k): return "%s ×%d" % [k, r.instead[k]]))
+		print("  MISS %s %s: %d/%d (%d%%) → %s; напр. %s" % [r.room, r.what, r.miss, r.points,
+			roundi(100.0 * r.miss / r.points), instead, r.example])
+	for f in fallbacks:
+		print("  FALLBACK " + f)
+	for r in rows:  # мёртвая цель: нарисована, а тап по ней в основном просто идёт пешком
+		check(r.instead.get("ходьба", 0) * 2 < r.points, "%s: «%s» не ловит тап — %d из %d видимых точек ведут в ходьбу" \
+			% [r.room, r.what, r.instead.get("ходьба", 0), r.points])
+	if not report_path.is_empty():
+		var file := FileAccess.open(report_path, FileAccess.WRITE)
+		file.store_string(JSON.stringify({width = width, probes = probes.values(), fallbacks = fallbacks}, "\t"))

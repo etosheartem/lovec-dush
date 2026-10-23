@@ -8,7 +8,7 @@
 
 ![Godot 4.7](https://img.shields.io/badge/Godot-4.7-478cbf?logo=godotengine&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-arm64-3ddc84?logo=android&logoColor=white)
-![Версия](https://img.shields.io/badge/версия-0.19-ffcd71)
+![Версия](https://img.shields.io/badge/версия-0.20-ffcd71)
 ![Сюжет](https://img.shields.io/badge/сюжет-1%3A1%20с%20оригиналом-8a5a2b)
 
 ### [⬇ Скачать APK для Android](https://github.com/etosheartem/lovec-dush/releases/latest/download/lovec_dush.apk)
